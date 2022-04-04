@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Aynur balci</h1>
-    {{$name}}
+<a href="{{route('test',['id'=>12,'name'=>'Aynur'])}}">test page</a>
 
 </body>
 </html>
