@@ -8,5 +8,7 @@
 </head>
 <body>
     <h1>Aynur balci</h1>
+    {{$name}}
+
 </body>
 </html>
