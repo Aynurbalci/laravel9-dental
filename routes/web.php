@@ -16,10 +16,7 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('welcome');
 });
-/*
-Route::get('/', function () {
-    return view('home.index',['name' =>'Ayyyy']);
-});*/
+
 Route::get('test/{id}/{name}',[HomeController::class,'test'])->whereNumber('id')->whereAlpha('name')->name('test') ;
 Route::get('/home',[HomeController::class,'Index'])->name('home');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

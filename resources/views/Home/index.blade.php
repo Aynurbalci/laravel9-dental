@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY first laravel page</title>
-</head>
-<body>
-    <h1>Aynur balci</h1>
-<a href="{{route('test',['id'=>12,'name'=>'Aynur'])}}">test page</a>
+@extends('layouts.home')
 
-</body>
-</html>
+@section('title','sub Page Title')
+
+@section('slidebar')
+@parent
+<p>Sub page data</p>
+@endsection
+@section('content')
+<p> ab</p>
+@endsection
