@@ -10,8 +10,10 @@ class HomeController extends Controller
         return view('home.index');
     }
     public function test($id,$name){
-
-       return view('home.test',['id' => $id,'name'=>$name]);
+$data['id']=$id;
+$data['name']=$name;
+return view('home.test',$data);
+       //return view('home.test',['id' => $id,'name'=>$name]);
 
        /* echo "id Number :",$id;
         echo "<br>Name :", $name;
