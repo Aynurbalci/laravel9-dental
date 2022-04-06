@@ -1,96 +1,91 @@
-  <!-- =============== Preloader =============== -->
-  <div id="preloader">
-        <div id="loading">
-            <img width="256" height="32" src="{{ asset('assets')}}/img/loading-cylon-red.svg">
-        </div>
-    </div>
-    <!-- =============== nav =============== -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+<!-- Top bar Start -->
+<div class="top-bar" >
             <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <i class="fa fa-envelope"></i>
+                        support@email.com
+                    </div>
+                    <div class="col-sm-6">
+                        <i class="fa fa-phone-alt"></i>
+                        +012-345-6789
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top bar End -->
+
+        <!-- Nav Bar Start -->
+        <div class="nav">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="assets/img/logo.png" alt="Logo">
-                    </a>
-                </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="page-scroll" > <a href="#home">Home</a>
-                        <ul class="page-scroll">
-										<li><a href="">Static Home</a></li>
-										<li><a href="">Slider Home</a></li>
-									</ul>
-
-                        </li>
-
-                        <li>
-                            <a class="page-scroll" href="#about">About</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#Services">Services</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#Gallery">Gallery</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#blog">Blog</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- =============== navbar-collapse =============== -->
-
-            </div>
-        </div>
-        <!-- =============== container-fluid =============== -->
-    </nav>
-    <!-- =============== header =============== -->
-    <header id="home" class="header">
-        <!-- =============== container =============== -->
-        <div class="container">
-            <div class="header-content row">
-
-
-                <div id="owl-demo" class="owl-carousel header1">
-                    <div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 header-text">
-                            <h2 class="wow bounceIn animated" data-wow-delay=".40s">FRIENDLY <span>TEMPLATE</span> FOR <br/>YOUR WEBSITE</h2>
-                            <h3 class="wow bounceIn animated" data-wow-delay=".50s">FOR YOUR WEBSITE </h3>
-                            <p class="wow bounceIn animated" data-wow-delay=".60s">Lorem ipsum dolor sit amet, consectetur adipiscing elit.We ensure sit amet, consectetur adipiscing elit</p>
-                            <p>
-                                <div class="btn btn-primary btn-lg btn-ornge wow bounceIn animated" data-wow-delay="1s"><i class="hbtn"></i> <span>Click Here</span></i>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto">
+                            <a href="{{ asset('assests')}}/index.html" class="nav-item nav-link active">Home</a>
+                            <a href="{{ asset('assests')}}/product-list.html" class="nav-item nav-link">Products</a>
+                            <a href="{{ asset('assests')}}/product-detail.html" class="nav-item nav-link">Product Detail</a>
+                            <a href="{{ asset('assests')}}/cart.html" class="nav-item nav-link">Cart</a>
+                            <a href="{{ asset('assests')}}/checkout.html" class="nav-item nav-link">Checkout</a>
+                            <a href="{{ asset('assests')}}/my-account.html" class="nav-item nav-link">My Account</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More Pages</a>
+                                <div class="dropdown-menu">
+                                    <a href="{{ asset('assests')}}/wishlist.html" class="dropdown-item">Wishlist</a>
+                                    <a href="{{ asset('assests')}}/login.html" class="dropdown-item">Login & Register</a>
+                                    <a href="{{ asset('assests')}}/contact.html" class="dropdown-item">Contact Us</a>
                                 </div>
-                            </p>
+                            </div>
+                        </div>
+                        <div class="navbar-nav ml-auto">
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">Login</a>
+                                    <a href="#" class="dropdown-item">Register</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 header-text">
-                            <h2 class="wow bounceIn animated" data-wow-delay=".40s">FRIENDLY <span>THIS</span> FOR <br/>YOUR WEBSITE</h2>
-                            <h3 class="wow bounceIn animated" data-wow-delay=".50s">FOR YOUR WEBSITE </h3>
-                            <p class="wow bounceIn animated" data-wow-delay=".60s">Lorem ipsum dolor sit amet, consectetur adipiscing elit.We ensure sit amet, consectetur adipiscing elit</p>
-                            <p>
-                                <div class="btn btn-primary btn-lg btn-ornge wow bounceIn animated" data-wow-delay="1s"><i class="hbtn"></i> <span>Click Here</span></i>
-                                </div>
-                            </p>
+                </nav>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+        <!-- Bottom Bar Start -->
+        <div class="bottom-bar">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        <div class="logo">
+                            <a href="{{ asset('assests')}}/index.html">
+                                <img src="{{ asset('assests')}}/img/logo.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="search">
+                            <input type="text" placeholder="Search">
+                            <button><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="user">
+                            <a href="{{ asset('assets')}}/wishlist.html" class="btn wishlist">
+                                <i class="fa fa-heart"></i>
+                                <span>(0)</span>
+                            </a>
+                            <a href="{{ asset('assests')}}/cart.html" class="btn cart">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>(0)</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
         </div>
-        <!-- =============== container end =============== -->
-    </header>
-
+        <!-- Bottom Bar End -->
