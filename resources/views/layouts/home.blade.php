@@ -111,174 +111,62 @@
 
     <!-- Main Slider Start -->
 
-    <div class="container-fluid p-0">
-        <div class="carousel-inner">
-            <div class="col-md-3">
-                <nav class="navbar bg-light">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-home"></i>Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-shopping-bag"></i>Best Selling</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-plus-square"></i>New Arrivals</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-female"></i>Fashion & Beauty</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-child"></i>Kids & Babies Clothes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-tshirt"></i>Men & Women Clothes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-mobile-alt"></i>Gadgets & Accessories</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics & Accessories</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-md-7">
-                <div id="header-carousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="w-100" src="{{ asset('assests')}}/img/carousel-1.jpg" alt="Image">
-                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                                <div class="p-3" style="max-width: 900px;">
-                                    <h3 class="text-white mb-3 d-none d-sm-block">Best Pet Services</h3>
-                                    <h1 class="display-3 text-white mb-3">Keep Your Pet Happy</h1>
-                                    <h5 class="text-white mb-3 d-none d-sm-block">Duo nonumy et dolor tempor no et. Diam sit diam sit diam erat</h5>
-                                    <a href="" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
-                                    <a href="" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="w-100" src="{{ asset('assests')}}/img/carousel-2.jpg" alt="Image">
-                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                                <div class="p-3" style="max-width: 900px;">
-                                    <h3 class="text-white mb-3 d-none d-sm-block">Best Pet Services</h3>
-                                    <h1 class="display-3 text-white mb-3">Pet Spa & Grooming</h1>
-                                    <h5 class="text-white mb-3 d-none d-sm-block">Duo nonumy et dolor tempor no et. Diam sit diam sit diam erat</h5>
-                                    <a href="" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
-                                    <a href="" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
-                        <div class="btn btn-primary rounded" style="width: 45px; height: 45px;">
-                            <span class="carousel-control-prev-icon mb-n2"></span>
-                        </div>
-                    </a>
-                    <a class="carousel-control-next" href="#header-carousel" data-slide="next">
-                        <div class="btn btn-primary rounded" style="width: 45px; height: 45px;">
-                            <span class="carousel-control-next-icon mb-n2"></span>
-                        </div>
-                    </a>
-                </div>
-            </div>
 
 
-        </div>
-    </div>
-    <!-- Review Starsdt -->
-    <div class="container-fluid">
-        <div id="header-carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="{{ asset('assests')}}/img/carousel-1.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h3 class="text-white mb-3 d-none d-sm-block">Best Pet Services</h3>
-                            <h1 class="display-3 text-white mb-3">Keep Your Pet Happy</h1>
-                            <h5 class="text-white mb-3 d-none d-sm-block">Duo nonumy et dolor tempor no et. Diam sit diam sit diam erat</h5>
-                            <a href="" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
-                            <a href="" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-slider-item">
-                    <div class="review-img">
-                        <img src="img/review-1.jpg" alt="Image">
-                    </div>
-                    <div class="review-text">
-                        <h2>Customer Name</h2>
-                        <h3>Profession</h3>
-                        <div class="ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="review-slider-item">
-                    <div class="review-img">
-                        <img src="img/review-2.jpg" alt="Image">
-                    </div>
-                    <div class="review-text">
-                        <h2>Customer Name</h2>
-                        <h3>Profession</h3>
-                        <div class="ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="review-slider-item">
-                    <div class="review-img">
-                        <img src="img/review-3.jpg" alt="Image">
-                    </div>
-                    <div class="review-text">
-                        <h2>Customer Name</h2>
-                        <h3>Profession</h3>
-                        <div class="ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+    <!-- neww sec-->
 
-    </div>
-    </div>
-    </div>
-    <!-- Main Slider End -->
+@include('home._main')
 
 
-    @include('home._contact')
+        <!-- =============== container =============== -->
 
 
-    @include('home._footer')
+
+
+
+@include('home._category')
+
+
+        @include('home._contact')
+
+
+        @include('home._footer')
+        <script>
+  $(document).ready(function() {
+
+	var nice = $("html").niceScroll();  // The document page (body)
+
+	$("#div1").html($("#div1").html()+' '+nice.version);
+
+    $("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true}); // First scrollable DIV
+
+    $("#boxscroll2").niceScroll("#contentscroll2",{cursorcolor:"#F00",cursoropacitymax:0.7,boxzoom:true,touchbehavior:true});  // Second scrollable DIV
+    $("#boxframe").niceScroll("#boxscroll3",{cursorcolor:"#0F0",cursoropacitymax:0.7,boxzoom:true,touchbehavior:true});  // This is an IFrame (iPad compatible)
+
+    $("#boxscroll4").niceScroll("#boxscroll4 .wrapper",{boxzoom:true});  // hw acceleration enabled when using wrapper
+
+  });
+</script>
+<script>
+window.onload = function() {
+    if(typeof oldIE === 'undefined' && Object.keys)
+        hljs.initHighlighting();
+
+    baguetteBox.run('.baguetteBoxOne');
+    baguetteBox.run('.baguetteBoxTwo');
+    baguetteBox.run('.baguetteBoxThree', {
+        animation: 'fadeIn'
+    });
+    baguetteBox.run('.baguetteBoxFour', {
+        buttons: false
+    });
+    baguetteBox.run('.baguetteBoxFive', {
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+        }
+    });
+};
+</script>
 
 
 </body>

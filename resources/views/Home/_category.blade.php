@@ -1,30 +1,61 @@
-<div class="col-md-3">
-                        <nav class="navbar bg-light">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-home"></i>Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-shopping-bag"></i>Best Selling</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-plus-square"></i>New Arrivals</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-female"></i>Fashion & Beauty</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-child"></i>Kids & Babies Clothes</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-tshirt"></i>Men & Women Clothes</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-mobile-alt"></i>Gadgets & Accessories</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics & Accessories</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+<div>
+
+
+<div>
+		<!-- =============== container =============== -->
+        <div  class="container">
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInDown animated" data-wow-delay=".1s">
+                   <div class="timg"><img src="{{ asset('assests')}}/img/team-img1.jpg"/></div>
+				    <div class="t-box">
+				   <h3>MOHD SUBHAN</h3>
+				   <span>Creative Director </span>
+				   <ul class="social-links">
+						<li><a class="wow fadeInUp animated" href="index.html#"><i class="fa fa-facebook"></i></a></li>
+						<li><a data-wow-delay=".1s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-twitter"></i></a></li>
+						<li><a data-wow-delay=".2s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-google-plus"></i></a></li>
+					</ul>
+				   </div>
+                  </div>
+				  <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInUp animated" data-wow-delay=".2s">
+                    <div class="timg"><img src="{{ asset('assests')}}/img/team-img2.jpg"/></div>
+				   <div class="t-box">
+				   <h3>Mohd Rahman</h3>
+				   <span>Website & ui designer</span>
+				   <ul class="social-links">
+						<li><a class="wow fadeInUp animated" href="index.html#"><i class="fa fa-facebook"></i></a></li>
+						<li><a data-wow-delay=".1s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-twitter"></i></a></li>
+						<li><a data-wow-delay=".2s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-google-plus"></i></a></li>
+					</ul>
+				   </div>
+                  </div>
+				  <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInDown animated" data-wow-delay=".3s">
+                    <div class="timg"><img src="{{ asset('assests')}}/img/team-img3.jpg"/></div>
+				   <div class="t-box">
+				   <h3>ZEENAT SUBHAN</h3>
+				   <span>Senior Developer</span>
+				   <ul class="social-links">
+						<li><a class="wow fadeInUp animated" href="index.html#"><i class="fa fa-facebook"></i></a></li>
+						<li><a data-wow-delay=".1s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-twitter"></i></a></li>
+						<li><a data-wow-delay=".2s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-google-plus"></i></a></li>
+					</ul>
+				   </div>
+                  </div>
+				  <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInUp animated" data-wow-delay=".4s">
+                    <div class="timg"><img src="{{ asset('assests')}}/img/team-img4.jpg"/></div>
+				    <div class="t-box">
+				   <h3>MOHD SAIF</h3>
+				   <span>Content Writer</span>
+				   <ul class="social-links">
+						<li><a class="wow fadeInUp animated" href="index.html#"><i class="fa fa-facebook"></i></a></li>
+						<li><a data-wow-delay=".1s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-twitter"></i></a></li>
+						<li><a data-wow-delay=".2s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-google-plus"></i></a></li>
+					</ul>
+				   </div>
+                  </div>
+            </div>
+
+		<!-- =============== container end =============== -->
+        </div>
+        </div>
