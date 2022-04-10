@@ -9,8 +9,9 @@
     <meta content="eCommerce HTML Template Free Download" name="description">
 
     <!-- HTML META ETİKETLERİ -->
-    <meta name="description" content="Free Web tutorials">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <title> @yield('title') </title>
+    <meta name="description" content="@yield('description')">
+    <meta name="keywords" content="@yield('keywords')">
     <meta name="author" content="Aynur BALCI">
 
 
@@ -79,94 +80,45 @@
     <script src="{{ asset('assests')}}/js/creative.js"> </script>
     <script src="{{ asset('assests')}}/js/jquery.nicescroll.min.js"></script>
 
-    <!-- nav-->
-    <link href="{{asset('assests')}}/css/style3.css" rel="stylesheet" type="text/css" />
 
-    <!-- 3-->
-    <!-- Favicon -->
-    <link href="{{ asset('assests')}}/img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Flaticon Font -->
-    <link href="{{ asset('assests')}}/lib/flaticon/font/flaticon.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="{{ asset('assests')}}/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="{{ asset('assests')}}/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ asset('assests')}}/css/style4.css" rel="stylesheet">
+    @yield('css')
+    @yield('headerjs')
 
 </head>
 
 <body>
 
     @include('home._header')
-    <!-- Carousel Start -->
+    @include('home._menu')
+    <!-- NAVIGATION -->
+    <div class="  container-fluid">
+        <div class="row">
+            @include('home._category')
+        </div>
+    </div>
 
-    <!-- Main Slider Start -->
-
-
-
-    <!-- neww sec-->
-
-@include('home._main')
-
-
-        <!-- =============== container =============== -->
-
-
-
-
-
-@include('home._category')
+    @section('content')
+    içerik alanı
+    @show
+    @include('home._contact')
+    @include('home._footer')
+    @yield('footerjs')
 
 
-        @include('home._contact')
 
 
-        @include('home._footer')
-        <script>
-  $(document).ready(function() {
 
-	var nice = $("html").niceScroll();  // The document page (body)
 
-	$("#div1").html($("#div1").html()+' '+nice.version);
 
-    $("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true}); // First scrollable DIV
 
-    $("#boxscroll2").niceScroll("#contentscroll2",{cursorcolor:"#F00",cursoropacitymax:0.7,boxzoom:true,touchbehavior:true});  // Second scrollable DIV
-    $("#boxframe").niceScroll("#boxscroll3",{cursorcolor:"#0F0",cursoropacitymax:0.7,boxzoom:true,touchbehavior:true});  // This is an IFrame (iPad compatible)
 
-    $("#boxscroll4").niceScroll("#boxscroll4 .wrapper",{boxzoom:true});  // hw acceleration enabled when using wrapper
 
-  });
-</script>
-<script>
-window.onload = function() {
-    if(typeof oldIE === 'undefined' && Object.keys)
-        hljs.initHighlighting();
 
-    baguetteBox.run('.baguetteBoxOne');
-    baguetteBox.run('.baguetteBoxTwo');
-    baguetteBox.run('.baguetteBoxThree', {
-        animation: 'fadeIn'
-    });
-    baguetteBox.run('.baguetteBoxFour', {
-        buttons: false
-    });
-    baguetteBox.run('.baguetteBoxFive', {
-        captions: function(element) {
-            return element.getElementsByTagName('img')[0].alt;
-        }
-    });
-};
-</script>
+
+
+
+
 
 
 </body>
