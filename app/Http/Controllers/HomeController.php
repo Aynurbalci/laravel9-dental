@@ -22,5 +22,6 @@ return view('home.test',$data);
             echo "<br> $i - $name";
         }*/
     }
+  
 }
 
