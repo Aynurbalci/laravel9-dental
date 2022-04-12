@@ -34,5 +34,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 //Admin
 Route::get('/admin',[AdminPanelHomeController::class,'index'])->name('adminhome');
-Route::get('/admin/login',[AdminPanelHomeController::class,'login'])->name('adminlogin');
-Route::post('/admin/logincheck',[Home])
+
+
+//Admin login işlemleri
+Route::get('/admin/login',[AdminPanelHomeController::class,'login'])->name('admin_login');
+Route::post('/admin/logincheck',[AdminPanelHomeController::class,'logincheck'])->name('admin_logincheck');
+Route::get('/admin/logout',[AdminPanelHomeController::class,'logout'])->name('admin_logout');
