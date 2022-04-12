@@ -18,10 +18,10 @@ return view('home.test',$data);
        /* echo "id Number :",$id;
         echo "<br>Name :", $name;
 
-        for($i=1;$i<=$id;$i++){
+        for($i=1;$i<=$id;$i++
             echo "<br> $i - $name";
         }*/
     }
-  
+
 }
 
