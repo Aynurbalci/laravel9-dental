@@ -5,31 +5,61 @@
 @section('content')
 
 
-    <div class="row">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <h3 class="text-center">CAtegory</h3>
-        </div>
+<div class="card-body">
+    <h4 class="card-title">Table with contextual classes</h4>
+    <p class="card-description">
+        Add class <code>.table-{color}</code>
+    </p>
+    <div class="table-responsive pt-3">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        First name
+                    </th>
+                    <th>
+                        Product
+                    </th>
+                    <th>
+                        Amount
+                    </th>
+                    <th>
+                        Deadline
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach($datalist as $rs)
+<p> </p>
+                <tr class="table-info">
+                    <td>
+                    {{$rs->id}}
+                    </td>
+                    <td>
+                    {{$rs->parent_id}}
+                    </td>
+                    <td>
+                    {{$rs->title}}
+                    </td>
+                    <td>
+                    {{$rs->status}}
+                    </td>
+                    <td>
+                   Edit
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
+</div>
+</div>
 
-    <!-- ============================================================== -->
-    <!-- footer -->
-    <!-- ============================================================== -->
-    <div class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                 @foreach($datalist as $rs)
-                 <p> {{$rs->title}}</p>
-                 @endforeach
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="text-md-right footer-links d-none d-sm-block">
-                        <a href="javascript: void(0);">About</a>
-                        <a href="javascript: void(0);">Support</a>
-                        <a href="javascript: void(0);">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endsection
+
+</div>
+
+@endsection
+@section('footer')
