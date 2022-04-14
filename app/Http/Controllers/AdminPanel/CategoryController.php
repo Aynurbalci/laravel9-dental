@@ -14,10 +14,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories=DB::table('categories')->get();
-        return view('admin._blank');
-    }
+        $datalist=DB::select('select * from categories');
 
+        return view('admin.category',['datalist'=>$datalist]);
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -22,11 +22,11 @@ Route::get('/laravel', function () {
 
 
 
-Route::get('test/{id}/{name}',[HomeController::class,'test'])->whereNumber('id')->whereAlpha('name')->name('test') ;
+Route::get('test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
 
 
 
-Route::get('/home',[HomeController::class,'Index'])->name('home');
+Route::get('/home', [HomeController::class, 'Index'])->name('home');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -35,20 +35,18 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //Admin
 Route::middleware('auth')->prefix('admin')->group(function () {
 
-    Route::middleware('admin')->group(function (){
-        Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
 
-        Route::get('category',[CategoryController::class, 'index'])->name('admin_category');
-        Route::get('category/add',[CategoryController::class, 'add'])->name('admin_category_add');
+        Route::get('/', [AdminPanelHomeController::class, 'index'])->name('admin_home');
 
+        Route::get('category', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'index'])->name('admin_category');
+        Route::get('category/add', [CategoryController::class, 'add'])->name('admin_category_add');
+        Route::post('category/update', [CategoryController::class, 'update'])->name('admin_category_update');
+        Route::get('category/delete', [CategoryController::class, 'destroy'])->name('admin_category_delete');
+        Route::get('category/show', [CategoryController::class, 'show'])->name('admin_category_show');
 
-        Route::post('category/update',[CategoryController::class, 'update'])->name('admin_category_update');
-        Route::get('category/delete',[CategoryController::class, 'destroy'])->name('admin_category_delete');
-        Route::get('category/show',[CategoryController::class, 'show'])->name('admin_category_show');
-    });
+});
 
-);
 //Admin login işlemleri
-Route::get('/admin/login',[HomeController::class,'login'])->name('admin_login');
-Route::post('/admin/logincheck',[HomeController::class,'logincheck'])->name('admin_logincheck');
-Route::get('/admin/logout',[HomeController::class,'logout'])->name('admin_logout');
+Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login');
+Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
+Route::get('/admin/logout', [HomeController::class, 'logout'])->name('admin_logout');
