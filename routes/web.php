@@ -39,13 +39,13 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/', [AdminPanelHomeController::class, 'index'])->name('admin_home');
 
         Route::get('category', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'index'])->name('admin_category');
-        Route::get('category/add', [CategoryController::class, 'add'])->name('admin_category_add');
-        Route::post('category/update', [CategoryController::class, 'update'])->name('admin_category_update');
-        Route::get('category/delete', [CategoryController::class, 'destroy'])->name('admin_category_delete');
-        Route::get('category/show', [CategoryController::class, 'show'])->name('admin_category_show');
+        Route::get('category/create', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'create'])->name('admin_category_create');
+        Route::post('category/store', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'store'])->name('admin_category_store');
+        Route::get('category/edit/{id}', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'edit'])->name('admin_category_edit');
+        Route::post('category/update/{id}', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'update'])->name('admin_category_update');
+        Route::get('category/show', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'show'])->name('admin_category_show');
 
 });
-
 //Admin login işlemleri
 Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login');
 Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');

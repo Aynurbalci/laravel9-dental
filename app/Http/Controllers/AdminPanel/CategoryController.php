@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
 class CategoryController extends Controller
 {
     /**
@@ -14,10 +15,13 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $datalist=DB::select('select * from categories');
+        $data=Category::all();
+        return view('admin.category.index',[
+            'data'=>$data
+        ]);
 
-        return view('admin.category',['datalist'=>$datalist]);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -25,7 +29,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.category_add');
     }
 
     /**
@@ -36,16 +40,23 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=new Category();
+        $data->parent_id=0;
+        $data->title=$request->title;
+        $data->keywords=$request->keywords;
+        $data->description=$request->description;
+        $data->status=$request->status;
+        $data->save();
+        return redirect('admin/category');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
         //
     }
@@ -53,33 +64,44 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category,$id)
     {
-        //
+        $data=Category::find($id);
+        return view('admin.category.edit',[
+            'data'=>$data
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category,$id)
     {
-        //
+
+        $data=Category::find($id);
+        $data->parent_id=0;
+        $data->title=$request->title;
+        $data->keywords=$request->keywords;
+        $data->description=$request->description;
+        $data->status=$request->status;
+        $data->save();
+        return redirect('admin/category');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
         //
     }

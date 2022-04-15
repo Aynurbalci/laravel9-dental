@@ -10,6 +10,7 @@
     <p class="card-description">
         Add class <code>.table-{color}</code>
     </p>
+    <a href="{{route('admin_category_add')}}">Add</a>
     <div class="table-responsive pt-3">
         <table class="table table-bordered">
             <thead>
@@ -32,23 +33,26 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach($datalist as $rs)
-<p> </p>
+                @foreach($datalist as $rs)
+                <p> </p>
                 <tr class="table-info">
                     <td>
-                    {{$rs->id}}
+                        {{$rs->id}}
                     </td>
                     <td>
-                    {{$rs->parent_id}}
+                        {{$rs->parent_id}}
                     </td>
                     <td>
-                    {{$rs->title}}
+                        {{$rs->title}}
                     </td>
                     <td>
-                    {{$rs->status}}
+                        {{$rs->status}}
                     </td>
                     <td>
-                   Edit
+                        Edit
+                    </td>
+                    <td> <a href="/admin/category/delete/{{$rs->id}}" onclick="return confirm('Delete ! Are you sure?')">Delete </a>
+
                     </td>
                 </tr>
                 @endforeach
@@ -59,7 +63,7 @@
 </div>
 
 
-</div>
+
 
 @endsection
 @section('footer')
