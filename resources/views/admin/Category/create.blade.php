@@ -1,32 +1,32 @@
 @extends('layouts.admin')
 
-@section('title', 'Edit Category :'.$data->title)
+@section('title', 'Add Category')
 
 @section('content')
 <div class="dashboard-wrapper">
     <div class="container-fluid dashboard-content">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <h3 class="text-center">Edit Category : {{$data->title}}</h3>
+                <h3 class="text-center">Add Category : </h3>
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="section-block" id="basicform">Edit Category</div>
+                        <div class="section-block" id="basicform">Add Category</div>
                         <div class="card">
                             <div class="card-body">
-                                <form action="/admin/category/update/{{$data->id}}" method="post">
+                                <form   action="/admin/category/store" method="post">
                                     @csrf
 
                                     <div class="form-group">
                                         <label for="inputText3" class="col-form-label">Title</label>
-                                        <input id="inputText3" type="text" class="form-control" name="title" value="{{$data->title}}">
+                                        <input id="inputText3" type="text" class="form-control" name="title" placeholder="Title">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputText3" class="col-form-label">Keywords</label>
-                                        <input id="inputText3" type="text" class="form-control" name="keywords" value="{{$data->keywords}}">
+                                        <input id="inputText3" type="text" class="form-control" name="keywords" placeholder="Keywords"> >
                                     </div>
                                     <div class="form-group">
                                         <label for="inputText3" class="col-form-label">Description</label>
-                                        <input id="inputText3" type="text" class="form-control" name="description" value="{{$data->description}}">
+                                        <input id="inputText3" type="text" class="form-control" name="description" placeholder="Description">>
                                     </div>
 
                                     <div class="form-group">
@@ -48,7 +48,7 @@
                                         </select>
                                     </div>
                                     <div>
-                                        <button class="btn btn-primary" type="submit">Update Data</button>
+                                        <button class="btn btn-primary" type="submit">Save</button>
                                     </div>
                                 </form>
                             </div>
