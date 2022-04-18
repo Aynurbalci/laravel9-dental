@@ -43,7 +43,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::post('category/store', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'store'])->name('admin_category_store');
         Route::get('category/edit/{id}', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'edit'])->name('admin_category_edit');
         Route::post('category/update/{id}', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'update'])->name('admin_category_update');
-        Route::get('category/show', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'show'])->name('admin_category_show');
+        Route::get('category/destroy/{id}',[\App\Http\Controllers\AdminPanel\CategoryController::class,'destroy'])->name('admin_category_destroy');
+        Route::get('category/show/{id}', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'show'])->name('admin_category_show');
 
 });
 //Admin login işlemleri
