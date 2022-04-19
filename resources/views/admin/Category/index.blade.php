@@ -7,7 +7,7 @@
 <div class="card">
     <div class="card-body">
     <button type="button" class="btn btn-outline-danger btn-icon-text">
-                    <a href="/admin/category/create" class="ti-upload btn-icon-prepend" style="text-decoration:none"> Add Category</a>
+                    <a href="{{route('admin.category.create')}}" class="ti-upload btn-icon-prepend" style="text-decoration:none"> Add Category</a>
 
                         </button>
         <div class="table-responsive">
@@ -53,9 +53,9 @@
                         <td>{{($rs->description)}}</td>
                         <td>{{($rs->imagine)}}</td>
                         <td>{{($rs->status)}}</td>
-                        <td><a class="btn btn-inverse-primary btn-fw" href="/admin/category/edit/{{($rs->id)}}/">Edit</a></td>
-                        <td><a class="btn btn-inverse-danger btn-fw" href="/admin/category/destroy/{{($rs->id)}}/" onclick="return confirm('Deleting !! Are you sure ?')">Delete</a></td>
-                        <td><a class="btn btn-inverse-success btn-fw" href="/admin/category/show/{{($rs->id)}}/">Show</a></td>
+                        <td><a class="btn btn-inverse-primary btn-fw" href="{{route('admin.category.edit',['id'=>$rs->id])}}">Edit</a></td>
+                        <td><a class="btn btn-inverse-danger btn-fw" href="{{route('admin.category.destory',['id'=>$rs->id])}}" onclick="return confirm('Deleting !! Are you sure ?')">Delete</a></td>
+                        <td><a class="btn btn-inverse-success btn-fw" href="{{route('admin.category.show',['id'=>$rs->id])}}">Show</a></td>
 
                     </tr>
                     @endforeach

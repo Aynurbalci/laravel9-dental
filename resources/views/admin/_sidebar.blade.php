@@ -45,7 +45,7 @@
         </li>
         <li class="nav-item">
             <a href="/admin/faq" class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="mdi mdi-comment-question-outline"></i>
+                <i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i>
                 <span class="menu-title">  Faq</span>
                 <i class=></i>
             </a>

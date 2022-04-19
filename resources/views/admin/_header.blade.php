@@ -25,7 +25,7 @@
             </button>
         </div>
         <div>
-            <a href="{{ route('admin_home')}}" class="navbar-brand brand-logo" href="index.html">
+            <a href="{{ route('index')}}" class="navbar-brand brand-logo" href="index.html">
                 <img src="{{ asset('assests')}}/admin/images/logo.svg" alt="logo" />
             </a>
             <a class="navbar-brand brand-logo-mini" href="index.html">

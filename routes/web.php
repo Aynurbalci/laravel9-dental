@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\HomeController as AdminPanelHomeController;
+use App\Http\Controllers\AdminPanel\CategoryController as AdminPanelCategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 /*
@@ -33,21 +34,21 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 //Admin
-Route::middleware('auth')->prefix('admin')->group(function () {
+Route::middleware('auth')->prefix('admin')->name('admin')->group(function () {
 
 
-        Route::get('/', [AdminPanelHomeController::class, 'index'])->name('admin_home');
-
-        Route::get('category', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'index'])->name('admin_category');
-        Route::get('category/create', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'create'])->name('admin_category_create');
-        Route::post('category/store', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'store'])->name('admin_category_store');
-        Route::get('category/edit/{id}', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'edit'])->name('admin_category_edit');
-        Route::post('category/update/{id}', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'update'])->name('admin_category_update');
-        Route::get('category/destroy/{id}',[\App\Http\Controllers\AdminPanel\CategoryController::class,'destroy'])->name('admin_category_destroy');
-        Route::get('category/show/{id}', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'show'])->name('admin_category_show');
+        Route::get('/', [AdminPanelHomeController::class, 'index'])->name('index');
+        Route::prefix('/category')->name('category.')->controller(AdminPanelCategoryController::class)->group((function () {
+            Route::get('/','index')->name('index');
+            Route::get('/create','create')->name('create');
+            Route::post('/store', 'store')->name('store');
+            Route::get('/edit/{id}','edit')->name('edit');
+            Route::post('/update/{id}','update')->name('update');
+            Route::get('/destroy/{id}','destroy')->name('destroy');
+            Route::get('/show/{id}','show')->name('show');
+        }));
 
 });
-//Admin login işlemleri
-Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login');
+//Admin logindmin_login');
 Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
 Route::get('/admin/logout', [HomeController::class, 'logout'])->name('admin_logout');
