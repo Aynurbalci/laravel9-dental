@@ -20,6 +20,21 @@
   <link rel="stylesheet" href="{{ asset('assests')}}/admin/css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('assests')}}/admin/images/favicon.png" />
+   <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="{{ asset('assests')}}/admin/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="{{ asset('assests')}}/admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="{{ asset('assests')}}/admin/js/off-canvas.js"></script>
+  <script src="{{ asset('assests')}}/admin/js/hoverable-collapse.js"></script>
+  <script src="{{ asset('assests')}}/admin/js/template.js"></script>
+  <script src="{{ asset('assests')}}/admin/js/settings.js"></script>
+  <script src="{{ asset('assests')}}/admin/js/todolist.js"></script>
+  <!-- endinjct -->
+
 </head>
 
 <body>
@@ -71,20 +86,7 @@
     </div>
     <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
-  <script src="{{ asset('assests')}}/admin/vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <script src="{{ asset('assests')}}/admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
-  <script src="{{ asset('assests')}}/admin/js/off-canvas.js"></script>
-  <script src="{{ asset('assests')}}/admin/js/hoverable-collapse.js"></script>
-  <script src="{{ asset('assests')}}/admin/js/template.js"></script>
-  <script src="{{ asset('assests')}}/admin/js/settings.js"></script>
-  <script src="{{ asset('assests')}}/admin/js/todolist.js"></script>
-  <!-- endinject -->
+
 </body>
 
 </html>

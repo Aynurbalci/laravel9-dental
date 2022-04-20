@@ -54,7 +54,7 @@
                         <td>{{($rs->imagine)}}</td>
                         <td>{{($rs->status)}}</td>
                         <td><a class="btn btn-inverse-primary btn-fw" href="{{route('admin.category.edit',['id'=>$rs->id])}}">Edit</a></td>
-                        <td><a class="btn btn-inverse-danger btn-fw" href="{{route('admin.category.destory',['id'=>$rs->id])}}" onclick="return confirm('Deleting !! Are you sure ?')">Delete</a></td>
+                        <td><a class="btn btn-inverse-danger btn-fw" href="{{route('admin.category.destroy',['id'=>$rs->id])}}" onclick="return confirm('Deleting !! Are you sure ?')">Delete</a></td>
                         <td><a class="btn btn-inverse-success btn-fw" href="{{route('admin.category.show',['id'=>$rs->id])}}">Show</a></td>
 
                     </tr>

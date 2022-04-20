@@ -15,8 +15,8 @@
                             <h4 class="card-title">Detail</h4>
 
                             <div class="table-responsive pt-3">
-                            <a class="btn btn-inverse-primary btn-fw" href="/admin/category/edit/{{($data->id)}}/">Edit</a>
-                            <a class="btn btn-inverse-danger btn-fw" href="/admin/category/destroy/{{($data->id)}}/" onclick="return confirm('Deleting !! Are you sure ?')">Delete</a>
+                            <a class="btn btn-inverse-primary btn-fw" href="{{route('admin.category.edit',['id'=>$data->id])}}">Edit</a>
+                            <a class="btn btn-inverse-danger btn-fw" href="{{route('admin.category.destroy',['id'=>$data->id])}}" onclick="return confirm('Deleting !! Are you sure ?')">Delete</a>
                                 <table class="table table-bordered">
                                     <tr>
                                         <th>Id</th>

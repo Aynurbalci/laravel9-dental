@@ -13,7 +13,7 @@
                         <div class="section-block" id="basicform">Add Category</div>
                         <div class="card">
                             <div class="card-body">
-                                <form   action="/admin/category/store" method="post">
+                                <form action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data" >
                                     @csrf
 
                                     <div class="form-group">
@@ -30,16 +30,9 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>File upload</label>
-                                        <input type="file" name="img[]" class="file-upload-default">
-                                        <div class="input-group col-xs-12">
-                                            <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
-                                            <span class="input-group-append">
-                                            <button class="btn btn-success btn-rounded btn-fw" type="file" name="image">Browse</button>
-                                                <button  class="btn btn-info btn-rounded btn-fw" type="button">Upload</button>
-                                            </span>
+                               <label>image</label>
+                               <input type="file" name="image" class="form-control">
                                         </div>
-                                    </div>
                                     <div class="form-group">
                                         <label>Status</label>
                                         <select class="form-control" name="status">
