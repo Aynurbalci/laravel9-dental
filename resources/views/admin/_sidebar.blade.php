@@ -14,7 +14,7 @@
             <a href="{{route('admin.index')}}" class="nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="ui-basic">
                 <i class="mdi mdi-format-list-bulleted-type"></i>
                 <span class="menu-title">Category</span>
-                <i class=></i>
+           
             </a>
 
         </li>
