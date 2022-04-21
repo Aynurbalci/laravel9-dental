@@ -11,10 +11,10 @@
 
         </li>
         <li class="nav-item">
-            <a href="{{route('admin.index')}}" class="nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="ui-basic">
+            <a href="{{route('admin.category.index')}}" class="nav-link"  aria-expanded="false" aria-controls="ui-basic">
                 <i class="mdi mdi-format-list-bulleted-type"></i>
                 <span class="menu-title">Category</span>
-           
+
             </a>
 
         </li>
