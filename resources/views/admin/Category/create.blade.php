@@ -17,6 +17,15 @@
                                     @csrf
 
                                     <div class="form-group">
+                                        <label for="inputText3" class="col-form-label">Parent</label>
+                                        <select class="form-control" name="parent_id">
+                                            <option value="0" selected="selected">Main category</option>
+                                            @foreach($data as $rs)
+                                                <option value="{{$rs->id}}"> {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title)}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="inputText3" class="col-form-label">Title</label>
                                         <input id="inputText3" type="text" class="form-control" name="title" placeholder="Title">
                                     </div>
