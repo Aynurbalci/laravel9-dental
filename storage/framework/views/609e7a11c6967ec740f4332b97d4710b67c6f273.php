@@ -11,7 +11,7 @@
 
         </li>
         <li class="nav-item">
-            <a href="{{route('admin.category.index')}}" class="nav-link"  aria-expanded="false" aria-controls="ui-basic">
+            <a href="<?php echo e(route('admin.category.index')); ?>" class="nav-link"  aria-expanded="false" aria-controls="ui-basic">
                 <i class="mdi mdi-format-list-bulleted-type"></i>
                 <span class="menu-title">Category</span>
 
@@ -19,7 +19,7 @@
 
         </li>
         <li class="nav-item">
-            <a href="{{route('admin.treatment.index')}}" class="nav-link"  aria-expanded="false" aria-controls="ui-basic">
+            <a href="<?php echo e(route('admin.treatment.index')); ?>" class="nav-link"  aria-expanded="false" aria-controls="ui-basic">
                 <i class="mdi mdi-seat-flat-angled"></i>
                 <span class="menu-title">Treatments</span>
                 <i class=></i>
@@ -35,7 +35,7 @@
 
         </li>
         <li class="nav-item">
-            <a href="{{route('admin.category.index')}}" class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a href="<?php echo e(route('admin.category.index')); ?>" class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
 
                 <i class="mdi mdi-settings-box ">Settings</i>
 
@@ -76,3 +76,4 @@
 
     </ul>
 </nav>
+<?php /**PATH /Applications/MAMP/htdocs/laravel9-dental/resources/views/admin/_sidebar.blade.php ENDPATH**/ ?>

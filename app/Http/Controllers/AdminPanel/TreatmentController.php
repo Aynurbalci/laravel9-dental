@@ -11,19 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class TreatmentController extends Controller
 {
-    protected $appends = [
-        'getParentsTree'
-    ];
-    public static function getParentsTree($treatment, $title)
-    {
-        if ($treatment->parent_id == 0)
-        {
-            return $title;
-        }
-        $parent=Treatment::find($treatment->parent_id);
-        $title=$parent->title. ' > ' .$title;
-        return TreatmentController::getParentsTree($parent,$title);
-    }
+
 
 
 
@@ -99,7 +87,7 @@ class TreatmentController extends Controller
     public function edit(Treatment $treatment, $id)
     {
         $data = Treatment::find($id);
-        $datalist=Treatment::all();
+        $datalist=Category::all();
         return view('admin.treatment.edit', [
             'data' => $data,
             'datalist'=> $datalist
