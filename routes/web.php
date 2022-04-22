@@ -40,6 +40,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     //category
     Route::get('/', [AdminPanelHomeController::class, 'index'])->name('index');
+
     Route::prefix('/category')->name('category.')->controller(AdminPanelCategoryController::class)->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
@@ -63,5 +64,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 });
 //Admin logindmin_login');
-Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
-Route::get('/admin/logout', [HomeController::class, 'logout'])->name('admin_logout');
+
+Route::get('admin/login',[HomeController::class, 'login'])->name('admin_login');
+
+Route::post('/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
+Route::get('/logout', [HomeController::class, 'logout'])->name('admin_logout');

@@ -51,14 +51,15 @@ class TreatmentController extends Controller
     public function store(Request $request)
     {
         $data = new Treatment();
-        $data->parent_id = $request->parent_id;
-        $data->title = $request->title;
-        $data->keywords = $request->keywords;
-        $data->description = $request->description;
-        $data->status = $request->status;
-        if ($request->file('image')) {
-            $data->image = $request->file('image')->store('images');
-        }
+        $data->title = $request->input('title');
+        $data->keywords = $request->input('keywords');
+        $data->description = $request->input('description');
+        $data->status = $request->input('status');
+        $data->category_id = $request->input('category_id');
+        $data->user_id = Auth::id();
+        $data->detail = $request->input('detail');
+        $data->price = $request->input('price');
+
         $data->save();
         return redirect('admin/treatment');
     }

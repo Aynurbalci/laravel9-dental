@@ -33,8 +33,7 @@ class HomeController extends Controller
         }*/
     }
     public function login()
-    {
-        return view('admin.login');
+    {       return view('admin_login');
     }
     public function logincheck(Request $request)
     {
@@ -51,7 +50,7 @@ class HomeController extends Controller
                 'email' => 'The provided credentials do not match our records.',
             ]);
         } else {
-            return view('admin.login');
+            return view('admin_login');
         }
     }
     public function logout(Request $request){

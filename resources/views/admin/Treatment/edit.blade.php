@@ -7,23 +7,22 @@
         <div class="container-fluid dashboard-content">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <h3 class="text-center">Edit Category : {{ $data->title }}</h3>
+                    <h3 class="text-center">Editing Treatments : {{ $data->title }}</h3>
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="section-block" id="basicform">Edit Category</div>
+                            <div class="section-block" id="basicform">Edit Treatment</div>
                             <div class="card">
                                 <div class="card-body">
                                     <form action="{{ route('admin.treatment.update', ['id' => $data->id]) }}" method="post"
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="inputText3" class="col-form-label">Parent</label>
-                                            <select class="form-control" name="parent_id">
-                                                <option value="0">Main category</option>
-                                                @foreach ($datalist as $rs)
+                                            <label for="inputText3" class="col-form-label">Category</label>
+                                            <select class="form-control" name="category_id">
+                                               @foreach ($datalist as $rs)
                                                     <option value="{{ $rs->id }}"
                                                         @if ($rs->id == $data->parent_id) selected="selected" @endif>
-                                                        {{ \App\Http\Controllers\AdminPanel\TreatmentController::getParentsTree($rs, $rs->title) }}
+                                                        {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }}
                                                     </option>
                                                 @endforeach
                                             </select>
@@ -43,10 +42,22 @@
                                             <input id="inputText3" type="text" class="form-control" name="description"
                                                 value="{{ $data->description }}">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="inputText3" class="col-form-label">Detail</label>
+                                            <input id="inputText3" type="text" class="form-control" name="description"
+                                                value="{{ $data->detail }}">
+                                        </div>
 
                                         <div class="form-group">
-                                            <label>image</label>
-                                            <input type="file" name="image" class="form-control">
+                                            <label for="inputText3" class="col-form-label">Price</label>
+                                            <input id="inputText3" value="{{$data->price}}" type="number" class="form-control" name="price">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputText3" class="col-form-label">Image</label>
+                                            <input id="inputText3" type="file" name="image" class="form-control">
+                                            @if ($rs->image)
+                                                <img src="{{Storage::url($rs->image)}}" height="60" alt="">
+                                            @endif
                                         </div>
                                         <div class="form-group">
                                             <label>Status</label>
@@ -56,7 +67,7 @@
                                             </select>
                                         </div>
                                         <div>
-                                            <button class="btn btn-primary" type="submit">Update Data</button>
+                                            <button class="btn btn-primary" type="submit">Update Treatment</button>
                                         </div>
                                     </form>
                                 </div>

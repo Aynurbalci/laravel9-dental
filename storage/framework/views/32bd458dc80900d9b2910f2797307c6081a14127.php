@@ -7,32 +7,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Star Admin2 </title>
   <!-- plugins:css-->
-  <link rel="stylesheet" href="{{ asset('assests')}}/admin/vendors/feather/feather.css">
-  <link rel="stylesheet" href="{{ asset('assests')}}/admin/vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="{{ asset('assests')}}/admin/vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="{{ asset('assests')}}/admin/vendors/typicons/typicons.css">
-  <link rel="stylesheet" href="{{ asset('assests')}}/admin/vendors/simple-line-icons/css/simple-line-icons.css">
-  <link rel="stylesheet" href="{{ asset('assests')}}/admin/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="<?php echo e(asset('assests')); ?>/admin/vendors/feather/feather.css">
+  <link rel="stylesheet" href="<?php echo e(asset('assests')); ?>/admin/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="<?php echo e(asset('assests')); ?>/admin/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="<?php echo e(asset('assests')); ?>/admin/vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="<?php echo e(asset('assests')); ?>/admin/vendors/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="<?php echo e(asset('assests')); ?>/admin/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{{ asset('assests')}}/admin/css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="<?php echo e(asset('assests')); ?>/admin/css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{{ asset('assests')}}/admin/images/favicon.png" />
+  <link rel="shortcut icon" href="<?php echo e(asset('assests')); ?>/admin/images/favicon.png" />
    <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="{{ asset('assests')}}/admin/vendors/js/vendor.bundle.base.js"></script>
+  <script src="<?php echo e(asset('assests')); ?>/admin/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
-  <script src="{{ asset('assests')}}/admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="<?php echo e(asset('assests')); ?>/admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="{{ asset('assests')}}/admin/js/off-canvas.js"></script>
-  <script src="{{ asset('assests')}}/admin/js/hoverable-collapse.js"></script>
-  <script src="{{ asset('assests')}}/admin/js/template.js"></script>
-  <script src="{{ asset('assests')}}/admin/js/settings.js"></script>
-  <script src="{{ asset('assests')}}/admin/js/todolist.js"></script>
+  <script src="<?php echo e(asset('assests')); ?>/admin/js/off-canvas.js"></script>
+  <script src="<?php echo e(asset('assests')); ?>/admin/js/hoverable-collapse.js"></script>
+  <script src="<?php echo e(asset('assests')); ?>/admin/js/template.js"></script>
+  <script src="<?php echo e(asset('assests')); ?>/admin/js/settings.js"></script>
+  <script src="<?php echo e(asset('assests')); ?>/admin/js/todolist.js"></script>
   <!-- endinjct -->
 
 </head>
@@ -45,12 +45,12 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="{{ asset('assests')}}/admin/images/logo.svg" alt="logo">
+                <img src="<?php echo e(asset('assests')); ?>/admin/images/logo.svg" alt="logo">
               </div>
               <h4>Hello! let's get started</h4>
               <h6 class="fw-light">Sign in to continue.</h6>
-              <form action="{{ route('admin_logincheck')}}"  class="pt-3" method="post">
-                  @csrf
+              <form action="<?php echo e(route('admin.logincheck')); ?>"  class="pt-3" method="post">
+                  <?php echo csrf_field(); ?>
                 <div class="form-group">
                   <input id="email" type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
 </div>
@@ -58,7 +58,7 @@
                   <input id="password" type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 <div class="mt-3">
-                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="{{route('admin.index')}}">SIGN IN</button>
+                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="<?php echo e(asset('assests')); ?>/admin/index.html">SIGN IN</button>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
@@ -90,3 +90,4 @@
 </body>
 
 </html>
+<?php /**PATH /Applications/MAMP/htdocs/laravel9-dental/resources/views/admin/login.blade.php ENDPATH**/ ?>

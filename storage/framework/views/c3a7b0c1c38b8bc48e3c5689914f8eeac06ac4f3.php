@@ -1,8 +1,6 @@
-@extends('layouts.admin')
+<?php $__env->startSection('title', 'Add Treatment'); ?>
 
-@section('title', 'Add Treatment')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="dashboard-wrapper">
         <div class="container-fluid dashboard-content">
             <div class="row">
@@ -13,19 +11,20 @@
                             <div class="section-block" id="basicform">Add Treatment</div>
                             <div class="card">
                                 <div class="card-body">
-                                    <form action="{{ route('admin.treatment.store') }}" method="post"
+                                    <form action="<?php echo e(route('admin.treatment.store')); ?>" method="post"
                                         enctype="multipart/form-data">
-                                        @csrf
+                                        <?php echo csrf_field(); ?>
 
                                         <div class="form-group">
                                             <label for="inputText3" class="col-form-label">Category</label>
                                             <select class="form-control" name="parent_id">
 
-                                                @foreach ($data as $rs)
-                                                    <option value="{{ $rs->id }}">
-                                                        {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }}
+                                                <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <option value="<?php echo e($rs->id); ?>">
+                                                        <?php echo e(\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title)); ?>
+
                                                     </option>
-                                                @endforeach
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -70,4 +69,6 @@
                 </div>
             </div>
         </div>
-    @endsection
+    <?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/MAMP/htdocs/laravel9-dental/resources/views/admin/treatment/create.blade.php ENDPATH**/ ?>
