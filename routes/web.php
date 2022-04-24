@@ -19,7 +19,7 @@ use App\Http\Controllers\HomeController;
 
 
 
-Route::get('/laravel', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 

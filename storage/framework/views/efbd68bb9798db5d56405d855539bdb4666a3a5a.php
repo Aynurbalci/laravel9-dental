@@ -51,7 +51,7 @@
                         <td><?php echo e(($rs->title)); ?></td>
                         <td>
                             <?php if($rs->image): ?>
-<img src="<?php echo e(Storage::url($rs->image)); ?>">
+                                  <img src="<?php echo e(\Illuminate\Support\Facades\Storage::url($rs->image)); ?>">
                             <?php endif; ?>
                         </td>
                         <td><?php echo e(($rs->status)); ?></td>

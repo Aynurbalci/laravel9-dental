@@ -31,7 +31,7 @@
                     <tr>
                         <td><?php echo e(($rs->id)); ?></td>
                         <td>
-                            <?php echo e(\App\Http\Controllers\AdminPanel\TreatmentController::getParentsTree($rs, $rs->title)); ?>
+                            <?php echo e(\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title)); ?>
 
                         </td>
                         <td><?php echo e(($rs->title)); ?></td>

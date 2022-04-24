@@ -51,7 +51,7 @@
                         <td>{{($rs->title)}}</td>
                         <td>
                             @if ($rs->image)
-<img src="{{Storage::url($rs->image)}}">
+                                  <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}">
                             @endif
                         </td>
                         <td>{{($rs->status)}}</td>

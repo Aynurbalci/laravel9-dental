@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('user_id')->nullable();
             $table->text('detail')->nullable();
             $table->float('price')->nullable();
-            $table->string('status',5)->nullable()->default('False');
+            $table->string('status',5)->nullable();
             $table->timestamps();
         });
     }

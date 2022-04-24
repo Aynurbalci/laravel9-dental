@@ -32,9 +32,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data = Category::all();
+       $data = Category::all();
         return view('admin.category.index', [
-            'data' => $data
+          'data' => $data
         ]);
     }
 
