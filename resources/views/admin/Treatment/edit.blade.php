@@ -55,15 +55,14 @@
                                         <div class="form-group">
                                             <label for="inputText3" class="col-form-label">Image</label>
                                             <input id="inputText3" type="file" name="image" class="form-control">
-                                            @if ($rs->image)
-                                                <img src="{{Storage::url($rs->image)}}" height="60" alt="">
-                                            @endif
+
                                         </div>
-                                        <div class="form-group">
+                                       <div class="form-group">
                                             <label>Status</label>
                                             <select class="form-control" name="status">
-                                                <option selected="selected">False</option>
+                                                <option selected="selected">{{$data->status}}</option>
                                                 <option>True</option>
+                                                <option>False</option>
                                             </select>
                                         </div>
                                         <div>

@@ -4,7 +4,8 @@
         <li class="nav-item nav-category">Menu</li>
         <li class="nav-item">
             <a href="/admin/users" class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="mdi mdi-account ">Users</i>
+                <i class="mdi mdi-account menu-icon"></i>
+                <span class="menu-title">User</span>
 
 
             </a>
@@ -12,7 +13,7 @@
         </li>
         <li class="nav-item">
             <a href="<?php echo e(route('admin.category.index')); ?>" class="nav-link"  aria-expanded="false" aria-controls="ui-basic">
-                <i class="mdi mdi-format-list-bulleted-type"></i>
+                <i class="mdi mdi-format-list-bulleted-type menu-icon"></i>
                 <span class="menu-title">Category</span>
 
             </a>
@@ -20,7 +21,7 @@
         </li>
         <li class="nav-item">
             <a href="<?php echo e(route('admin.treatment.index')); ?>" class="nav-link"  aria-expanded="false" aria-controls="ui-basic">
-                <i class="mdi mdi-seat-flat-angled"></i>
+                <i class="mdi mdi-seat-flat-angled menu-icon"></i>
                 <span class="menu-title">Treatments</span>
                 <i class=></i>
             </a>
@@ -28,7 +29,7 @@
         </li>
         <li class="nav-item">
             <a  class="nav-link"   aria-expanded="false" aria-controls="ui-basic">
-                <i class="mdi mdi-message-plus"></i>
+                <i class="mdi mdi-message-plus menu-icon"></i>
                 <span class="menu-title">Contact Message</span>
                 <i class=></i>
             </a>

@@ -59,7 +59,9 @@ class TreatmentController extends Controller
         $data->user_id = Auth::id();
         $data->detail = $request->input('detail');
         $data->price = $request->input('price');
-
+        if ($request->file('image')) {
+            $data->image = $request->file('image')->store('images');
+        }
         $data->save();
         return redirect('admin/treatment');
     }
@@ -114,11 +116,11 @@ class TreatmentController extends Controller
         $data->user_id = Auth::id();
         $data->detail = $request->input('detail');
         $data->price = $request->input('price');
-        if ($request->file('image') != null) {
-            $data->image = Storage::putFile('images', $request->file('image'));
+        if ($request->file('image')) {
+            $data->image = $request->file('image')->store('images');
         }
         $data->save();
-        return redirect()->route('admin/treatment');
+        return redirect('admin/treatment');
     }
 
     /**
@@ -130,7 +132,7 @@ class TreatmentController extends Controller
     public function destroy(Treatment $treatment, $id)
     {
         $data = Treatment::find($id);
-        Storage::delete($data->image);
+
         $data->delete();
         return redirect('admin/treatment');
     }

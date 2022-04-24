@@ -28,7 +28,7 @@
                         <th>
                             Status
                         </th>
-                        <th>
+                        <th style="width:30px">
                             Edit
                         </th>
                         <th>
@@ -51,11 +51,11 @@
                         <td><?php echo e(($rs->title)); ?></td>
                         <td>
                             <?php if($rs->image): ?>
-                                  <img src="<?php echo e(\Illuminate\Support\Facades\Storage::url($rs->image)); ?>">
+                                  <img src="<?php echo e(\Illuminate\Support\Facades\Storage::url($rs->image)); ?>" class="m-0">
                             <?php endif; ?>
                         </td>
                         <td><?php echo e(($rs->status)); ?></td>
-                        <td><a class="btn btn-inverse-primary btn-fw" href="<?php echo e(route('admin.category.edit',['id'=>$rs->id])); ?>">Edit</a></td>
+                        <td><a class="btn btn-primary me-md-2 mb-1" href="<?php echo e(route('admin.category.edit',['id'=>$rs->id])); ?>">Edit</a></td>
                         <td><a class="btn btn-inverse-danger btn-fw" href="<?php echo e(route('admin.category.destroy',['id'=>$rs->id])); ?>" onclick="return confirm('Deleting !! Are you sure ?')">Delete</a></td>
                         <td><a class="btn btn-inverse-success btn-fw" href="<?php echo e(route('admin.category.show',['id'=>$rs->id])); ?>">Show</a></td>
 
@@ -66,7 +66,6 @@
         </div>
     </div>
 </div>
-
 
 
 

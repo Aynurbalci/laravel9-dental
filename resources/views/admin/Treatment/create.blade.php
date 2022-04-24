@@ -50,7 +50,10 @@
                                             <input id="inputText3" value="0" type="number" class="form-control"
                                                 name="price">
                                         </div>
-
+                                        <div class="form-group">
+                                            <label for="inputText3" class="col-form-label">Image</label>
+                                            <input id="inputText3" type="file" name="image" class="form-control">
+                                        </div>
                                         <div class="form-group">
                                             <label>Status</label>
                                             <select class="form-control" name="status">
