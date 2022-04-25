@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\AdminPanel;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
@@ -39,7 +40,6 @@ class TreatmentController extends Controller
         return view('admin.treatment.create', [
             'data' => $data
         ]);
-
     }
 
     /**
@@ -90,10 +90,10 @@ class TreatmentController extends Controller
     public function edit(Treatment $treatment, $id)
     {
         $data = Treatment::find($id);
-        $datalist=Category::all();
+        $datalist = Category::all();
         return view('admin.treatment.edit', [
             'data' => $data,
-            'datalist'=> $datalist
+            'datalist' => $datalist
         ]);
     }
 
@@ -132,7 +132,9 @@ class TreatmentController extends Controller
     public function destroy(Treatment $treatment, $id)
     {
         $data = Treatment::find($id);
-
+        if (Storage::exists($data->image)) {
+            Storage::delete($data->image);
+        }
         $data->delete();
         return redirect('admin/treatment');
     }
