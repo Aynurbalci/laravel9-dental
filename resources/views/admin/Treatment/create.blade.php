@@ -19,7 +19,8 @@
 
                                         <div class="form-group">
                                             <label for="inputText3" class="col-form-label">Category</label>
-                                            <select class="form-control" name="parent_id">
+                                            <select class="form-control" name="category_id">
+
 
                                                 @foreach ($data as $rs)
                                                     <option value="{{ $rs->id }}">
