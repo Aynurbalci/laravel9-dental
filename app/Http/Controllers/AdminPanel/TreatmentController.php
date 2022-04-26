@@ -132,7 +132,7 @@ class TreatmentController extends Controller
     public function destroy(Treatment $treatment, $id)
     {
         $data = Treatment::find($id);
-        if (Storage::exists($data->image)) {
+        if ($data->image && Storage::disk('public')->exists($data->image)) {
             Storage::delete($data->image);
         }
         $data->delete();

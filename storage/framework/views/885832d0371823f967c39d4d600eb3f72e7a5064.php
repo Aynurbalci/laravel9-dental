@@ -24,6 +24,7 @@
                             <th>Status</th>
                             <th>Edit</th>
                             <th>Delete</th>
+                            <th>Show</th>
 
                         </tr>
                     </thead>
@@ -32,7 +33,7 @@
                             <tr>
                                 <td><?php echo e($rs->id); ?></td>
                                 <td>
-                                    <?php echo e(\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title)); ?>
+                                    <?php echo e(\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category, $rs->category->title)); ?>
 
                                 </td>
                                 <td><?php echo e($rs->title); ?></td>
@@ -50,7 +51,7 @@
                                 <td><a class="btn btn-inverse-danger btn-fw"
                                         href="<?php echo e(route('admin.treatment.destroy', ['id' => $rs->id])); ?>"
                                         onclick="return confirm('Deleting !! Are you sure ?')">Delete</a></td>
-
+                                        <td><a class="btn btn-inverse-success btn-fw" href="<?php echo e(route('admin.treatment.show',['id'=>$rs->id])); ?>">Show</a></td>
 
                             </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

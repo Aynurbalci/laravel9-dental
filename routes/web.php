@@ -58,7 +58,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/edit/{id}','edit')->name('edit');
     Route::post('/update/{id}','update')->name('update');
     Route::get('/delete/{id}','destroy')->name('destroy');
-    Route::get('/show','show')->name('show');
+    Route::get('/show/{id}','show')->name('show');
 
 });
 

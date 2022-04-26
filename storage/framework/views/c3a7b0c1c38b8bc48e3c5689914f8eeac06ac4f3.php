@@ -17,7 +17,8 @@
 
                                         <div class="form-group">
                                             <label for="inputText3" class="col-form-label">Category</label>
-                                            <select class="form-control" name="parent_id">
+                                            <select class="form-control" name="category_id">
+
 
                                                 <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <option value="<?php echo e($rs->id); ?>">

@@ -25,6 +25,7 @@
                             <th>Status</th>
                             <th>Edit</th>
                             <th>Delete</th>
+                            <th>Show</th>
 
                         </tr>
                     </thead>
@@ -33,7 +34,7 @@
                             <tr>
                                 <td>{{ $rs->id }}</td>
                                 <td>
-                                    {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }}
+                                    {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category, $rs->category->title) }}
                                 </td>
                                 <td>{{ $rs->title }}</td>
                                 <td>{{ $rs->price }}</td>
@@ -50,7 +51,7 @@
                                 <td><a class="btn btn-inverse-danger btn-fw"
                                         href="{{ route('admin.treatment.destroy', ['id' => $rs->id]) }}"
                                         onclick="return confirm('Deleting !! Are you sure ?')">Delete</a></td>
-
+                                        <td><a class="btn btn-inverse-success btn-fw" href="{{route('admin.treatment.show',['id'=>$rs->id])}}">Show</a></td>
 
                             </tr>
                         @endforeach
