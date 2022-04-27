@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminPanel\HomeController as AdminPanelHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminPanelCategoryController;
 use App\Http\Controllers\AdminPanel\TreatmentController as AdminPanelTreatmentController;
+use App\Http\Controllers\AdminPanel\ImageController as AdminPanelImageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -50,22 +51,28 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
         Route::get('/show/{id}', 'show')->name('show');
     });
- //treatment
- Route::prefix('/treatment')->name('treatment.')->controller(AdminPanelTreatmentController::class)->group(function (){
-    Route::get('/','index')->name('index');
-    Route::get('/create','create')->name('create');
-    Route::post('/store','store')->name('store');
-    Route::get('/edit/{id}','edit')->name('edit');
-    Route::post('/update/{id}','update')->name('update');
-    Route::get('/delete/{id}','destroy')->name('destroy');
-    Route::get('/show/{id}','show')->name('show');
-
-});
-
+    //Admin treatment
+    Route::prefix('/treatment')->name('treatment.')->controller(AdminPanelTreatmentController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/delete/{id}', 'destroy')->name('destroy');
+        Route::get('/show/{id}', 'show')->name('show');
+    });
+//     Admin images
+    Route::prefix('/image')->name('image.')->controller(AdminPanelImageController::class)->group(function () {
+        Route::get('/{pid}', 'index')->name('index');
+        Route::get('/create/{pid}', 'create')->name('create');
+        Route::post('/store/{pid}', 'store')->name('store');
+        Route::post('/update/{pid}/{id}', 'update')->name('update');
+        Route::get('/delete/{pid}/{id}', 'destroy')->name('destroy');
+    });
 });
 //Admin logindmin_login');
 
-Route::get('admin/login',[HomeController::class, 'login'])->name('admin_login');
+Route::get('admin/login', [HomeController::class, 'login'])->name('admin_login');
 
 Route::post('/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
 Route::get('/logout', [HomeController::class, 'logout'])->name('admin_logout');

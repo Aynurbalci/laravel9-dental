@@ -52,8 +52,7 @@
 <body>
     <div class="container-scroller">
 
-        @include('admin._header')
-        <div class="container-fluid page-body-wrapper">
+
 
                 @yield('content')
 

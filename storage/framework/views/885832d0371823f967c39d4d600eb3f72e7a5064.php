@@ -40,18 +40,24 @@
                                 <td><?php echo e($rs->price); ?></td>
                                 <td>
                                     <?php if($rs->image): ?>
-                                        <img src="<?php echo e(\Illuminate\Support\Facades\Storage::url($rs->image)); ?>" height="30" alt="">
+                                        <img src="<?php echo e(\Illuminate\Support\Facades\Storage::url($rs->image)); ?>" height="30"
+                                            alt="">
                                     <?php endif; ?>
 
                                 </td>
-
+                                <td> <a class="btn btn-inverse-primary btn-fw"
+                                        href="<?php echo e(route('admin.image.index', ['pid' => $rs->id])); ?>" onclick="return !window.open(this.href, '','top=50 left=100 width=1100 height=700')">
+                                    <img src="<?php echo e(asset('assests')); ?>/admin/img/download.png">
+                                    </a>
+                                </td>
                                 <td><?php echo e($rs->status); ?></td>
                                 <td><a class="btn btn-inverse-primary btn-fw"
                                         href="<?php echo e(route('admin.treatment.edit', ['id' => $rs->id])); ?>">Edit</a></td>
                                 <td><a class="btn btn-inverse-danger btn-fw"
                                         href="<?php echo e(route('admin.treatment.destroy', ['id' => $rs->id])); ?>"
                                         onclick="return confirm('Deleting !! Are you sure ?')">Delete</a></td>
-                                        <td><a class="btn btn-inverse-success btn-fw" href="<?php echo e(route('admin.treatment.show',['id'=>$rs->id])); ?>">Show</a></td>
+                                <td><a class="btn btn-inverse-success btn-fw"
+                                        href="<?php echo e(route('admin.treatment.show', ['id' => $rs->id])); ?>">Show</a></td>
 
                             </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
