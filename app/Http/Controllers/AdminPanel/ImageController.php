@@ -4,7 +4,9 @@ namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Image;
+use App\Models\Treatment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ImageController extends Controller
 {
@@ -15,21 +17,27 @@ class ImageController extends Controller
      */
     public function index($pid)
     {
-       $data=Image::where('treatmen_id',$pid);
+
+       $treatment=Treatment::find($pid);
+
+       $images=DB::table('images')->where('treatmen_id',$pid)->get();
        return view('admin.image.index',[
-           'data'=>$data
+           'treatment'=>$treatment,
+           'images'=>$images,
+
     ]);
 
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function create($pid)
+    public function create(Request $request,$pid)
     {
-        //
+
+
     }
 
     /**
@@ -40,7 +48,15 @@ class ImageController extends Controller
      */
     public function store(Request $request,$pid)
     {
-        //
+        $data = new Image();
+        $data->treatment_id = $pid;
+        $data->title = $request->title;
+
+        if ($request->file('image')) {
+            $data->image = $request->file('image')->store('images');
+        }
+        $data->save();
+        return redirect()->route('admin.image.index',['pid'=>$pid]);
     }
 
     /**

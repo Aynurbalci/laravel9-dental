@@ -3,13 +3,29 @@
 
 
 @section('content')
+    <h3>{{ $treatment->title }}</h3>
+    <hr> 
+    <form action="{{ route('admin.image.store', ['pid' => $treatment->id]) }}" method="post"
+        enctype="multipart/form-data">
+    @csrf
+    <div class="form-group">
+        <label for="inputText3" class="col-form-label">Title</label>
+        <input id="inputText3" type="text" class="form-control" name="title">
+    </div>
+    <div class="form-group">
+        <label>image</label>
+        <input type="file" name="image" class="form-control">
+    </div>
+    <button class="btn btn-primary" type="submit">Save</button>
 
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title"> Treatment Image List</h3>
 
-            <div class="card-body">
-                <table class="table table-bordered">
+
+
+    </form>
+    <table class="table table-bordered">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-body">
                     <thead>
                         <tr>
                             <th>
@@ -33,33 +49,7 @@
 
                         </tr>
                     </thead>
-                    <tbody>
-                        @foreach ($data as $rs)
-                            <tr>
-                                <td>{{ $rs->id }}</td>
-
-                                <td>{{ $rs->title }}</td>
-                                <td>
-                                    @if ($rs->image)
-                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($rs->image) }}"
-                                            class="m-0">
-                                    @endif
-                                </td>
-                                <td>{{ $rs->status }}</td>
-                                <td><a class="btn btn-primary me-md-2 mb-1"
-                                        href="{{ route('admin.category.edit', ['id' => $rs->id]) }}">Edit</a></td>
-                                <td><a class="btn btn-inverse-danger btn-fw"
-                                        href="{{ route('admin.category.destroy', ['id' => $rs->id]) }}"
-                                        onclick="return confirm('Deleting !! Are you sure ?')">Delete</a></td>
-
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                </div>
             </div>
         </div>
-
-
-
-
-@endsection
+    @endsection
