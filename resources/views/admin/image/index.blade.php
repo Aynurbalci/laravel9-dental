@@ -4,19 +4,20 @@
 
 @section('content')
     <h3>{{ $treatment->title }}</h3>
-    <hr> 
+    <hr>
     <form action="{{ route('admin.image.store', ['pid' => $treatment->id]) }}" method="post"
         enctype="multipart/form-data">
     @csrf
     <div class="form-group">
         <label for="inputText3" class="col-form-label">Title</label>
         <input id="inputText3" type="text" class="form-control" name="title">
+        <div class="input-group-append">
+            <label>image</label>
+            <input type="file" name="image" class="form-control">
+        </div>
+        <button class="btn btn-primary" type="submit" value="Upload">Save</button>
+
     </div>
-    <div class="form-group">
-        <label>image</label>
-        <input type="file" name="image" class="form-control">
-    </div>
-    <button class="btn btn-primary" type="submit">Save</button>
 
 
 

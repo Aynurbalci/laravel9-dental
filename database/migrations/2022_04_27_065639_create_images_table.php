@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id();
             $table->foreignId('treatment_id')->nullable();
             $table->string('title', 150);
             $table->string('image', 100)->nullable();

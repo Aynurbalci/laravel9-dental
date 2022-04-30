@@ -3,19 +3,20 @@
 
 <?php $__env->startSection('content'); ?>
     <h3><?php echo e($treatment->title); ?></h3>
-<hr
+    <hr>
     <form action="<?php echo e(route('admin.image.store', ['pid' => $treatment->id])); ?>" method="post"
         enctype="multipart/form-data">
-        <?php echo csrf_field(); ?>
-        <div class="form-group">
-            <label for="inputText3" class="col-form-label">Title</label>
-            <input id="inputText3" type="text" class="form-control" name="title">
-        </div>
-        <div class="form-group">
+    <?php echo csrf_field(); ?>
+    <div class="form-group">
+        <label for="inputText3" class="col-form-label">Title</label>
+        <input id="inputText3" type="text" class="form-control" name="title">
+        <div class="input-group-append">
             <label>image</label>
             <input type="file" name="image" class="form-control">
-                     </div>
-                     <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+        <button class="btn btn-primary" type="submit" value="Upload">Save</button>
+
+    </div>
 
 
 

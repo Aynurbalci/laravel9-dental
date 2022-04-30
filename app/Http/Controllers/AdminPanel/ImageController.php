@@ -20,7 +20,7 @@ class ImageController extends Controller
 
        $treatment=Treatment::find($pid);
 
-       $images=DB::table('images')->where('treatmen_id',$pid)->get();
+       $images=Image::where('treatmen_id',$pid);
        return view('admin.image.index',[
            'treatment'=>$treatment,
            'images'=>$images,
@@ -29,16 +29,6 @@ class ImageController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function create(Request $request,$pid)
-    {
-
-
-    }
 
     /**
      * Store a newly created resource in storage.
