@@ -1,4 +1,8 @@
 <?php $__env->startSection('title', 'Add Treatment'); ?>
+<?php $__env->startSection('head'); ?>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+
+<?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
     <div class="dashboard-wrapper">
@@ -42,7 +46,19 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="inputText3" class="col-form-label">Detail</label>
-                                            <input type="text" class="form-control" name="detail"></İ>
+                                            <textarea  class="form-control" id="detail" name="detail">
+
+                                            </textarea>
+                                            <script>
+                                                ClassicEditor
+                                                    .create( document.querySelector( '#detail' ) )
+                                                    .then( editor => {
+                                                        console.log( editor );
+                                                    } )
+                                                    .catch( error => {
+                                                        console.error( error );
+                                                    } );
+                                            </script>
 
                                         </div>
                                         <div class="form-group">

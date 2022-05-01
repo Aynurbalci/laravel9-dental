@@ -45,8 +45,8 @@
     <script src="<?php echo e(asset('assests')); ?>/admin/js/Chart.roundedBarCharts.js"></script>
     <!-- End custom js for this page-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <?php echo $__env->yieldContent('css'); ?>
-    <?php echo $__env->yieldContent('javascript'); ?>
+
+    <?php echo $__env->yieldContent('head'); ?>
 </head>
 
 <body>
@@ -59,7 +59,7 @@
             <div class="main-panel">
                 <?php echo $__env->yieldContent('content'); ?>
                 <?php echo $__env->make('admin._footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                <?php echo $__env->yieldContent('footer'); ?>
+                <?php echo $__env->yieldContent('foot'); ?>
             </div>
 
         </div>

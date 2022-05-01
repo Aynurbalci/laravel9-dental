@@ -43,6 +43,10 @@
                                             <th>Price</th>
                                             <td>{{ $data->price }}</td>
                                         </tr>
+                                        <tr>
+                                            <th>Detail Info</th>
+                                            <td>{{ $data->detail }}</td>
+                                        </tr>
 
                                         <tr>
                                             <th>Image</th>

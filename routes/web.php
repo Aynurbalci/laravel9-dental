@@ -65,8 +65,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::prefix('/image')->name('image.')->controller(AdminPanelImageController::class)->group(function () {
         Route::get('/{pid}', 'index')->name('index');
         Route::post('/store/{pid}', 'store')->name('store');
-        Route::post('/update/{pid}/{id}', 'update')->name('update');
-        Route::get('/delete/{pid}/{id}', 'destroy')->name('destroy');
+        Route::get('/destroy/{pid}/{id}', 'destroy')->name('destroy');
     });
 });
 //Admin logindmin_login');

@@ -42,6 +42,10 @@
                                             <th>Price</th>
                                             <td><?php echo e($data->price); ?></td>
                                         </tr>
+                                        <tr>
+                                            <th>Detail Info</th>
+                                            <td><?php echo e($data->detail); ?></td>
+                                        </tr>
 
                                         <tr>
                                             <th>Image</th>

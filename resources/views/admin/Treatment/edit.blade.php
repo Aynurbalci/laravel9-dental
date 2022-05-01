@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 
 @section('title', 'Edit Treatment :' . $data->title)
+@section('head')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"></script>
+
+@endsection
 
 @section('content')
     <div class="dashboard-wrapper">
@@ -77,4 +81,13 @@
                 </div>
             </div>
         </div>
+    @endsection
+@section('foot')
+            <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+            <script>
+                $(function(){
+                    $('.textarea').summernote()
+                })
+            </script>
+
     @endsection
