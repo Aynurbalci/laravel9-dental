@@ -20,7 +20,7 @@ use App\Http\Controllers\HomeController;
 
 
 
-Route::get('/', function () {
+Route::get('/a', function () {
     return view('welcome');
 });
 
@@ -30,7 +30,7 @@ Route::get('test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id
 
 
 
-Route::get('/home', [HomeController::class, 'Index'])->name('home');
+Route::get('/', [HomeController::class, 'Index'])->name('home');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
