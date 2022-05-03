@@ -1,90 +1,47 @@
 
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Sentra - Free Bootstrap Theme</title>
+<html lang="en">
 
-<!--
+<head>
+    <meta charset="utf-8">
+    <title>E Store - eCommerce HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="eCommerce HTML Template Free Download" name="keywords">
+    <meta content="eCommerce HTML Template Free Download" name="description">
 
-Sentra Template
+    <!-- Favicon -->
+    <link href="{{ asset('assests')}}/img/favicon.ico" rel="icon">
 
-https://templatemo.com/tm-518-sentra
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
 
--->
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ asset('assests')}}/lib/slick/slick.css" rel="stylesheet">
+    <link href="{{ asset('assests')}}/lib/slick/slick-theme.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="{{ asset('assests') }}/css1/bootstrap.min.css">
-        <link rel="stylesheet" href="{{ asset('assests') }}/css1/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{{ asset('assests') }}/css1/fontAwesome.css">
-        <link rel="stylesheet" href="{{ asset('assests') }}/css1/light-box.css">
-        <link rel="stylesheet" href="{{ asset('assests') }}/css1/owl-carousel.css">
-        <link rel="stylesheet" href="{{ asset('assests') }}/css1/templatemo-style.css">
+    <!-- Template Stylesheet -->
+    <link href="{{ asset('assests')}}/css/style.css" rel="stylesheet">
+     <!-- JavaScript Libraries -->
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+     <script src="{{ asset('assests')}}/lib/easing/easing.min.js"></script>
+     <script src="{{ asset('assests')}}/lib/slick/slick.min.js"></script>
 
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+     <!-- Template Javascript -->
+     <script src="{{ asset('assests')}}/js/main.js"></script>
+ <!-- Code injected by live-server -->
 
-        <script src="{{ asset('assests') }}/js1/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-        <script src="{{ asset('assests') }}/js1/vendor/bootstrap.min.js"></script>
+</head>
 
-        <script src="{{ asset('assests') }}/js1/plugins.js"></script>
-        <script src="{{ asset('assests') }}/js1/main.js"></script>
-
-        <script>
-            // Hide Header on on scroll down
-            var didScroll;
-            var lastScrollTop = 0;
-            var delta = 5;
-            var navbarHeight = $('header').outerHeight();
-
-            $(window).scroll(function(event){
-                didScroll = true;
-            });
-
-            setInterval(function() {
-                if (didScroll) {
-                    hasScrolled();
-                    didScroll = false;
-                }
-            }, 250);
-
-            function hasScrolled() {
-                var st = $(this).scrollTop();
-
-                // Make sure they scroll more than delta
-                if(Math.abs(lastScrollTop - st) <= delta)
-                    return;
-
-                // If they scrolled down and are past the navbar, add class .nav-up.
-                // This is necessary so you never see what is "behind" the navbar.
-                if (st > lastScrollTop && st > navbarHeight){
-                    // Scroll Down
-                    $('header').removeClass('nav-down').addClass('nav-up');
-                } else {
-                    // Scroll Up
-                    if(st + $(window).height() < $(document).height()) {
-                        $('header').removeClass('nav-up').addClass('nav-down');
-                    }
-                }
-
-                lastScrollTop = st;
-            }
-        </script>
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-
-    </head>
 <body>
 
+    @include('home._search')
     @include('home._header')
-    @include('home._menu')
-    <!-- NAVIGATION -->
 
+    <!-- NAVIGATION -->
     @section('slider')
     @show
     @section('content')
