@@ -29,8 +29,8 @@ class HomeController extends Controller
     public function treatment($id)
     {
         $data=Treatment::find($id);
-$images=DB::table('images')->where('treatment_id',$id)->get();
-        return view('home.treatment',[
+        $images=DB::table('images')->where('treatment_id',$id)->get();
+              return view('home.treatment',[
             'data' => $data,
             'images'=>$images
 
@@ -41,14 +41,7 @@ $images=DB::table('images')->where('treatment_id',$id)->get();
         $data['id'] = $id;
         $data['name'] = $name;
         return view('home.test', $data);
-        //return view('home.test',['id' => $id,'name'=>$name]);
 
-        /* echo "id Number :",$id;
-        echo "<br>Name :", $name;
-
-        for($i=1;$i<=$id;$i++){
-            echo "<br> $i - $name";
-        }*/
     }
     public function login()
     {       return view('admin_login');
