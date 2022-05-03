@@ -18,8 +18,19 @@ class HomeController extends Controller
     public function Index()
     {
         $sliderdata=Treatment::limit(4)->get();
+        $productlist1=Treatment::limit(4)->get();
         return view('home.index',[
-            'sliderdata' => $sliderdata
+            'sliderdata' => $sliderdata,
+            'productlist1'=>$productlist1
+
+        ]);
+    }
+    public function treatment($id)
+    {
+        $data=Treatment::find($id);
+
+        return view('home.index',[
+            'data' => $data,
 
         ]);
     }
