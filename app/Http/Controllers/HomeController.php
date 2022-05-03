@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Treatment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,11 @@ class HomeController extends Controller
      */
     public function Index()
     {
-        return view('home.index');
+        $sliderdata=Treatment::limit(4)->get();
+        return view('home.index',[
+            'sliderdata' => $sliderdata
+
+        ]);
     }
     public function test($id, $name)
     {
