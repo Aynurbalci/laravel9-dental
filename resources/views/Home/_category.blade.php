@@ -1,34 +1,15 @@
-<div class="col-md-3">
-    <nav class="navbar bg-light">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-home"></i>Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-shopping-bag"></i>Best Selling</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-plus-square"></i>New Arrivals</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-female"></i>Fashion & Beauty</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-child"></i>Kids & Babies Clothes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-tshirt"></i>Men & Women Clothes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-mobile-alt"></i>Gadgets & Accessories</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics & Accessories</a>
-            </li>
-        </ul>
-    </nav>
+<div class="col-md-4 ">
+    <div class="header-img">
+        <div class="img-item">
+            <img src="{{ asset('assests')}}/img/category-1.jpg" />
+            <a class="img-text" href="">
+                <p>Some text goes here that describes the image</p>
+            </a>
+        </div>
+
+    </div>
 </div>
-<div class="col-md-3">
+<div class="col-md-4">
 
     <div class="row">
         <h2>About Us</h2>
@@ -37,7 +18,7 @@
     </div>
 </div>
 
-<div class="col-md-3 ">
+<div class="col-md-4 ">
     <div class="header-img">
         <div class="img-item">
             <img src="{{ asset('assests')}}/img/category-1.jpg" />

@@ -8,18 +8,24 @@
 
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav mr-auto">
-                    <a href="{{ asset('assests')}}/index.html" class="nav-item nav-link active">Home</a>
-                    <a href="{{ asset('assests')}}/product-list.html" class="nav-item nav-link">Products</a>
-                    <a href="{{ asset('assests')}}/product-detail.html" class="nav-item nav-link">Product Detail</a>
-                    <a href="{{ asset('assests')}}/cart.html" class="nav-item nav-link">Cart</a>
-                    <a href="{{ asset('assests')}}/checkout.html" class="nav-item nav-link">Checkout</a>
-                    <a href="{{ asset('assests')}}/my-account.html" class="nav-item nav-link">My Account</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More fds</a>
+                        <div class="dropdown-menu">
+                            <a href="{{ asset('assests') }}/wishlist.html" class="dropdown-item">Wishlist</a>
+                            <a href="{{ asset('assests') }}/login.html" class="dropdown-item">Login & Register</a>
+                            <a href="{{ asset('assests') }}/contact.html" class="dropdown-item">Contact Us</a>
+                        </div>
+                    </div>                    <a href="{{ asset('assests') }}/product-list.html" class="nav-item nav-link">Products</a>
+                    <a href="{{ asset('assests') }}/product-detail.html" class="nav-item nav-link">Product Detail</a>
+                    <a href="{{ asset('assests') }}/cart.html" class="nav-item nav-link">Cart</a>
+                    <a href="{{ asset('assests') }}/checkout.html" class="nav-item nav-link">Checkout</a>
+                    <a href="{{ asset('assests') }}/my-account.html" class="nav-item nav-link">My Account</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More Pages</a>
                         <div class="dropdown-menu">
-                            <a href="{{ asset('assests')}}/wishlist.html" class="dropdown-item">Wishlist</a>
-                            <a href="{{ asset('assests')}}/login.html" class="dropdown-item">Login & Register</a>
-                            <a href="{{ asset('assests')}}/contact.html" class="dropdown-item">Contact Us</a>
+                            <a href="{{ asset('assests') }}/wishlist.html" class="dropdown-item">Wishlist</a>
+                            <a href="{{ asset('assests') }}/login.html" class="dropdown-item">Login & Register</a>
+                            <a href="{{ asset('assests') }}/contact.html" class="dropdown-item">Contact Us</a>
                         </div>
                     </div>
                 </div>

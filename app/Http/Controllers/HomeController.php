@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Treatment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -28,9 +29,10 @@ class HomeController extends Controller
     public function treatment($id)
     {
         $data=Treatment::find($id);
-
-        return view('home.index',[
+$images=DB::table('images')->where('treatment_id',$id)->get();
+        return view('home.treatment',[
             'data' => $data,
+            'images'=>$images
 
         ]);
     }

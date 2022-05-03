@@ -73,4 +73,4 @@ Route::get('admin/login', [HomeController::class, 'login'])->name('admin_login')
 
 Route::post('/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
 Route::get('/logout', [HomeController::class, 'logout'])->name('admin_logout');
-Route::get('/treatment/{id}',[HomeController::class,'product'])->name('product');
+Route::get('/treatment/{id}',[HomeController::class,'treatment'])->name('treatment');
