@@ -8,7 +8,7 @@
                <div>
                     <div class="col-xs-12 col-sm-6 col-md-6 header-text">
                         <h2 class="wow bounceIn animated" data-wow-delay=".40s">FRIENDLY <span>TEMPLATE</span> FOR <br />YOUR {{$rs->title  }}</h2>
-                        <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="">
+                        <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="" style="width:550px; height:600px;">
 
                         <div class="btn btn-primary btn-lg btn-ornge wow bounceIn animated" data-wow-delay="1s"><i class="hbtn"></i> <span>Click Here</span></i>
                         </div>
@@ -16,17 +16,7 @@
                     </div>
                 </div>
                 @endforeach
-                <div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 header-text">
-                        <h2 class="wow bounceIn animated" data-wow-delay=".40s">FRIENDLY <span>THIS</span> FOR <br />YOUR WEBSITE</h2>
-                        <h3 class="wow bounceIn animated" data-wow-delay=".50s">FOR YOUR WEBSITE </h3>
-                        <p class="wow bounceIn animated" data-wow-delay=".60s">Lorem ipsum dolor sit amet, consectetur adipiscing elit.We ensure sit amet, consectetur adipiscing elit</p>
-                        <p>
-                        <div class="btn btn-primary btn-lg btn-ornge wow bounceIn animated" data-wow-delay="1s"><i class="hbtn"></i> <span>Click Here</span></i>
-                        </div>
-                        </p>
-                    </div>
-                </div>
+
 
             </div>
         </div>

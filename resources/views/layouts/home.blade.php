@@ -97,7 +97,8 @@
             @include('home._category')
         </div>
     </div>
-
+@section('slider')
+@show
     @section('content')
     içerik alanı
     @show
