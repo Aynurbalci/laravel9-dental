@@ -26,7 +26,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-5">
                             <div class="product-slider-single normal-slider">
-                                <img src="<?php echo e($data->image); ?>" alt="Product Image">
+
 
                                 <?php $__currentLoopData = $images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <img src="<?php echo e(\Illuminate\Support\Facades\Storage::url($rs->image)); ?>" alt="Product Image">
@@ -166,9 +166,13 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 
 <!-- Footer Bottom End -->

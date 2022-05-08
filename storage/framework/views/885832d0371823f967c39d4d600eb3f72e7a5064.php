@@ -47,7 +47,7 @@
                                 </td>
                                 <td> <a class="btn btn-inverse-primary btn-fw"
                                         href="<?php echo e(route('admin.image.index', ['pid' => $rs->id])); ?>" onclick="return !window.open(this.href, '','top=50 left=100 width=1100 height=700')">
-                                    <img src="<?php echo e(asset('assests')); ?>/admin/img/download.png">
+                                    <img src="<?php echo e(asset('assests')); ?>/admin/images/download.png">
                                     </a>
                                 </td>
                                 <td><?php echo e($rs->status); ?></td>

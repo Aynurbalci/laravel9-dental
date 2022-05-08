@@ -94,9 +94,9 @@
                             The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog MTV quiz graced
                         </p>
                         <div class="flat-read-more">
-                            <a href="service-details.html" class="themesflat-button font-default small">
+                            <button href="" class="themesflat-button font-default small">
                                 <span>Read More<i class="fa fa-arrow-right"></i> </span>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -533,7 +533,7 @@ Maximus libero ornare
 
                             </p>
                             <div class="flat-read-more">
-                                <a href="service-details.html" class="themesflat-button font-default process">
+                                <a href="<?php echo e(route('treatment',['id' =>$rs->id])); ?>" class="themesflat-button font-default process">
                                     <span>Read More<i class="fa fa-arrow-right"></i> </span>
                                 </a>
                             </div>

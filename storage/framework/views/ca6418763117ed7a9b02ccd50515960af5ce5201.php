@@ -50,7 +50,7 @@
                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                     data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1000"
                     data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                    <a href="about-us.html" class="themesflat-button bg-accent big"><span>Who Are We</span></a>
+                    <a href="<?php echo e(route('treatment',['id' =>$rs->id])); ?>" class="themesflat-button bg-accent big"><span>View in detail</span></a>
                 </div>
             </li>
 

@@ -56,7 +56,7 @@
 
                 @yield('content')
 
-                @yield('footer')
+
 
 
         </div>

@@ -47,7 +47,7 @@
                                 </td>
                                 <td> <a class="btn btn-inverse-primary btn-fw"
                                         href="{{ route('admin.image.index', ['pid' => $rs->id]) }}" onclick="return !window.open(this.href, '','top=50 left=100 width=1100 height=700')">
-                                    <img src="{{ asset('assests') }}/admin/img/download.png">
+                                    <img src="{{ asset('assests') }}/admin/images/download.png">
                                     </a>
                                 </td>
                                 <td>{{ $rs->status }}</td>

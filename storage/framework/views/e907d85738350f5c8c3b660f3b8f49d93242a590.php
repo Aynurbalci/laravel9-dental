@@ -148,12 +148,5 @@
 <script src="<?php echo e(asset('assests')); ?>/dent/owlcarousel/owl.carousel.min.js"></script>
 <script src="<?php echo e(asset('assests')); ?>/dent/owlcarousel/carousel.js"></script>
 <script type="text/javascript" src="<?php echo e(asset('assests')); ?>/dent/javascript/main.js"></script>
-  <!-- JavaScript Libraries -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-  <script src="<?php echo e(asset('assests')); ?>/lib/easing/easing.min.js"></script>
-  <script src="<?php echo e(asset('assests')); ?>/lib/slick/slick.min.js"></script>
 
-  <!-- Template Javascript -->
-  <script src="<?php echo e(asset('assests')); ?>/js/main.js"></script>
 <?php /**PATH /Applications/MAMP/htdocs/laravel9-dental/resources/views/home/_footer.blade.php ENDPATH**/ ?>

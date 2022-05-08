@@ -18,11 +18,11 @@ class HomeController extends Controller
      */
     public function Index()
     {
-        $page='home';
+
         $sliderdata=Treatment::limit(4)->get();
        $treatmentlist1=Treatment::limit(4)->get();
         return view('home.index',[
-            'page'=>$page,
+
             'sliderdata' => $sliderdata,
             'treatmentlist1'=>$treatmentlist1
 

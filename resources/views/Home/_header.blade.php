@@ -47,14 +47,7 @@
                             </ul>
 
                         </li>
-                        <li class="menu-item-has-children">
-                            <a href="blog-standard.html" title="">Blog</a>
-                            <ul class="sub-menu">
-                                <li><a href="blog-standard.html" title="">Blog Standard</a></li>
-                                <li><a href="blog-details.html" title="">Blog Details</a></li>
-                            </ul>
 
-                        </li>
                         <li>
                             <a href="book-appointment.html" title="">Book Appointment</a>
                         </li>

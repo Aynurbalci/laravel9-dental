@@ -28,7 +28,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-5">
                             <div class="product-slider-single normal-slider">
-                                <img src="{{ $data->image }}" alt="Product Image">
+
 
                                 @foreach ($images as $rs)
                                 <img src="{{ \Illuminate\Support\Facades\Storage::url($rs->image) }}" alt="Product Image">
@@ -167,10 +167,13 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
-            
+        </div>
+    </div>
+</div>
+
+
+
 
 
 <!-- Footer Bottom End -->

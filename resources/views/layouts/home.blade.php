@@ -10,20 +10,27 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/css/color/color-1.css">
     <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/css/style.css">
-    <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/css/responsive.css">
-
-    <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/animation/animate.css">
-
-    <link rel="icon" href="{{ asset('assests') }}/dent/assets/image/Facvicon.webp" sizes="32x32" />
-
     <link rel="stylesheet" href="{{ asset('assests') }}/dent/revolution/css/layers.css">
     <link rel="stylesheet" href="{{ asset('assests') }}/dent/revolution/css/settings.css">
     <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/css/responsive.css">
 
     <link rel="stylesheet" href="{{ asset('assests') }}/dent/owlcarousel/assets/owl.theme.default.min.css">
 
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/animation/animate.css">
 
     <link rel="icon" href="{{ asset('assests') }}/dent/assets/image/Facvicon.webp" sizes="32x32" />
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/css/color/color-1.css">
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/revolution/css/layers.css">
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/revolution/css/settings.css">
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/css/responsive.css">
+
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/owlcarousel/assets/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/animation/animate.css">
+
+    <link rel="icon" href="{{ asset('assests') }}/dent/assets/image/Facvicon.webp" sizes="32x32" />
+
 
 
     @yield('head')
@@ -32,7 +39,6 @@
 <body class="counter-scroll header_sticky">
     <div class="wrapper">
         <div id="page">
-
             @include('home._header')
 
             <div id="main-content" class="site-main clearfix">
@@ -42,8 +48,8 @@
                         <div id="inner-content" class="inner-content-wrap">
                             <div class="page-content">
 
-@section('slider')
-@show
+                                @section('slider')
+                                @show
                                 @yield('content')
 
                             </div>
