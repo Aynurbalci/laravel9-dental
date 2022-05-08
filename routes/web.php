@@ -29,6 +29,7 @@ Route::get('test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id
 
 
 Route::get('/', [HomeController::class, 'Index'])->name('home');
+Route::get('/treatment_detail/{id}',[HomeController::class,'treatment_detail'])->name('treatment_detail');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

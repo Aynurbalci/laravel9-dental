@@ -8,7 +8,7 @@
             </button>
         </div>
         <div>
-            <a href="<?php echo e(route('admin.index')); ?>" class="navbar-brand brand-logo" href="index.html">
+            <a href="<?php echo e(route('admin.index')); ?>" class="navbar-brand brand-logo">
                 <img src="<?php echo e(asset('assests')); ?>/admin/images/logo.svg" alt="logo" />
             </a>
             <a class="navbar-brand brand-logo-mini" href="index.html">

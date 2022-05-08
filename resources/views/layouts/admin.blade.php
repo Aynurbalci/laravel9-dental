@@ -23,6 +23,28 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('assests')}}/admin/images/favicon.png" />
 
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    @yield('head')
+</head>
+
+<body>
+    <div class="container-scroller">
+
+        @include('admin._header')
+        <div class="container-fluid page-body-wrapper">
+
+            @include('admin._sidebar')
+            <div class="main-panel">
+                @yield('content')
+                @include('admin._footer')
+
+            </div>
+
+        </div>
+    </div>
+    @yield('foot')
     <!-- plugins:js -->
     <script src="{{ asset('assests')}}/admin/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -44,28 +66,6 @@
     <script src="{{ asset('assests')}}/admin/js/dashboard.js"></script>
     <script src="{{ asset('assests')}}/admin/js/Chart.roundedBarCharts.js"></script>
     <!-- End custom js for this page-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    @yield('head')
-</head>
-
-<body>
-    <div class="container-scroller">
-
-        @include('admin._header')
-        <div class="container-fluid page-body-wrapper">
-            @include('admin._navigation')
-            @include('admin._sidebar')
-            <div class="main-panel">
-                @yield('content')
-                @include('admin._footer')
-                @yield('foot')
-            </div>
-
-        </div>
-    </div>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 

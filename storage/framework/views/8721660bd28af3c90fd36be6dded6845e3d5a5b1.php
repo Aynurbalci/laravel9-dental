@@ -23,6 +23,28 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="<?php echo e(asset('assests')); ?>/admin/images/favicon.png" />
 
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <?php echo $__env->yieldContent('head'); ?>
+</head>
+
+<body>
+    <div class="container-scroller">
+
+        <?php echo $__env->make('admin._header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <div class="container-fluid page-body-wrapper">
+
+            <?php echo $__env->make('admin._sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <div class="main-panel">
+                <?php echo $__env->yieldContent('content'); ?>
+                <?php echo $__env->make('admin._footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+            </div>
+
+        </div>
+    </div>
+    <?php echo $__env->yieldContent('foot'); ?>
     <!-- plugins:js -->
     <script src="<?php echo e(asset('assests')); ?>/admin/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -44,28 +66,6 @@
     <script src="<?php echo e(asset('assests')); ?>/admin/js/dashboard.js"></script>
     <script src="<?php echo e(asset('assests')); ?>/admin/js/Chart.roundedBarCharts.js"></script>
     <!-- End custom js for this page-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <?php echo $__env->yieldContent('head'); ?>
-</head>
-
-<body>
-    <div class="container-scroller">
-
-        <?php echo $__env->make('admin._header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        <div class="container-fluid page-body-wrapper">
-            <?php echo $__env->make('admin._navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-            <?php echo $__env->make('admin._sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-            <div class="main-panel">
-                <?php echo $__env->yieldContent('content'); ?>
-                <?php echo $__env->make('admin._footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                <?php echo $__env->yieldContent('foot'); ?>
-            </div>
-
-        </div>
-    </div>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 

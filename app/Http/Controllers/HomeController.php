@@ -18,11 +18,13 @@ class HomeController extends Controller
      */
     public function Index()
     {
+        $page='home';
         $sliderdata=Treatment::limit(4)->get();
-        $productlist1=Treatment::limit(4)->get();
+       $treatmentlist1=Treatment::limit(4)->get();
         return view('home.index',[
+            'page'=>$page,
             'sliderdata' => $sliderdata,
-            'productlist1'=>$productlist1
+            'treatmentlist1'=>$treatmentlist1
 
         ]);
     }
@@ -36,6 +38,7 @@ class HomeController extends Controller
 
         ]);
     }
+
     public function test($id, $name)
     {
         $data['id'] = $id;

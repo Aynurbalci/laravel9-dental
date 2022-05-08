@@ -60,7 +60,7 @@
 
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item  @if(!@isset($page)) show-on-click @endif ">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="mdi mdi-heart-box menu-icon "></i>
                 <span class="menu-title">Randevus</span>

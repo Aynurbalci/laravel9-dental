@@ -1,86 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Mirrored from themesflat.com/html/carenow/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 May 2022 00:09:52 GMT -->
 
-    <meta charset="utf-8">
-    <title>E Store - eCommerce HTML Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="eCommerce HTML Template Free Download" name="keywords">
-    <meta content="eCommerce HTML Template Free Download" name="description">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title')</title>
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/css/color/color-1.css">
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/css/responsive.css">
 
-    <!-- HTML META ETİKETLERİ -->
-    <title> @yield('title') </title>
-    <meta name="description" content="@yield('description')">
-    <meta name="keywords" content="@yield('keywords')">
-    <meta name="author" content="Aynur BALCI">
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/animation/animate.css">
 
+    <link rel="icon" href="{{ asset('assests') }}/dent/assets/image/Facvicon.webp" sizes="32x32" />
 
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/revolution/css/layers.css">
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/revolution/css/settings.css">
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/assets/css/responsive.css">
 
-    <!-- Favicon -->
-    <link href="{{ asset('assests')}}/img/favicon.ico" rel="icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
-
-    <!-- CSS Libraries -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="{{ asset('assests')}}/lib/slick/slick.css" rel="stylesheet">
-    <link href="{{ asset('assests')}}/lib/slick/slick-theme.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="{{ asset('assests')}}/css/style.css" rel="stylesheet">
-
-        <!-- =============== Bootstrap Core CSS =============== -->
-        <link rel="stylesheet" href="{{ asset('assests')}}/css1/bootstrap.min.css" type="text/css">
-        <!-- =============== fonts awesome =============== -->
-        <link rel="stylesheet" href="{{ asset('assests')}}/font1/css/font-awesome.min.css" type="text/css">
-        <!-- =============== Plugin CSS =============== -->
-        <link rel="stylesheet" href="{{ asset('assests')}}/css1/animate.min.css" type="text/css">
-        <!-- =============== Custom CSS =============== -->
-        <link rel="stylesheet" href="{{ asset('assests')}}/css1/style.css" type="text/css">
-        <!-- =============== Owl Carousel Assets =============== -->
-        <link href="{{ asset('assests')}}/owl-carousel/owl.carousel.css" rel="stylesheet">
-        <link href="{{ asset('assests')}}/owl-carousel/owl.theme.css" rel="stylesheet">
-
-         <link rel="stylesheet" href="{{ asset('assests')}}/css1/isotope-docs.css" media="screen">
-          <link rel="stylesheet" href="{{ asset('assests')}}/css1/baguetteBox.css">
+    <link rel="stylesheet" href="{{ asset('assests') }}/dent/owlcarousel/assets/owl.theme.default.min.css">
 
 
+    <link rel="icon" href="{{ asset('assests') }}/dent/assets/image/Facvicon.webp" sizes="32x32" />
 
-    @yield('css')
-    @yield('headerjs')
 
+    @yield('head')
 </head>
 
-<body>
-    @include('home._search')
-    @include('home._header')
+<body class="counter-scroll header_sticky">
+    <div class="wrapper">
+        <div id="page">
 
+            @include('home._header')
+
+            <div id="main-content" class="site-main clearfix">
+
+                <div id="content-wrap">
+                    <div id="site-content" class="site-content clearfix">
+                        <div id="inner-content" class="inner-content-wrap">
+                            <div class="page-content">
 
 @section('slider')
 @show
-    @section('content')
-    içerik alanı
-    @show
-    @include('home._contact')
-    @include('home._footer')
-    @yield('footerjs')
+                                @yield('content')
 
+                            </div>
 
+                        </div>
 
+                    </div>
 
+                </div>
 
+            </div>
 
+            @include('home._footer')
+            @yield('foot')
 
+        </div>
 
-
-
-
-
-
-
-
-
-
+    </div>
 </body>
+
+</html>
