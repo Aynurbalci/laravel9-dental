@@ -20,32 +20,32 @@
   * root
   * General
   * Elements
-  * List 
-  * Table 
-  * Media 
+  * List
+  * Table
+  * Media
   * Typography
-  * Fixes 
+  * Fixes
   * Define
-  * Remove chrome yellow autofill 
-  * Reset search styling 
-  * Input normal 
+  * Remove chrome yellow autofill
+  * Reset search styling
+  * Input normal
   * Reset
-  * Entry Content 
+  * Entry Content
   * themesflat-pagination
   * Blog Pagination
-  * Widget title 
+  * Widget title
   * Widget Search
-  * Widget Brochure 
-  * Widget-infomation 
-  * Widget list 
-  * comment 
+  * Widget Brochure
+  * Widget-infomation
+  * Widget list
+  * comment
   * comment-list
   * hv-background-before
   * GoTop
   * home
-  * intro 
+  * intro
   * our-team
-  * portfolio 
+  * portfolio
   * couter
   * process
   * contact (home)
@@ -579,7 +579,7 @@ a:active {
 	letter-spacing: -0.7px !important;
 }
 
-/* define 
+/* define
 ----------------------------------------------*/
 .button-style1 {
 	background-color: #F2F7FF;
@@ -1076,7 +1076,7 @@ a:active {
 	font-family: var(--jost-font) !important;
 }
 
-/*header 
+/*header
 ----------------------------------*/
 #site-header {
 	display: flex;
@@ -2100,7 +2100,7 @@ a.megamenu-box {
 	color           : var(--primary-color);
 }
 
-/* Page Title 
+/* Page Title
 ---------------------------------------------------------------*/
 .page-title {
 	padding         : 23px 0 22px;
@@ -2229,7 +2229,7 @@ h3.heading {
 	line-height: 30px;
 }
 
-/* Main Content 
+/* Main Content
 ---------------------------------------------------------------*/
 .wrap-post {
 	margin  : 0 -15px;
@@ -2458,7 +2458,7 @@ ul.icon-direction li {
 }
 
 
-/* Blog Pagination 
+/* Blog Pagination
 ---------------------------------------------------------------*/
 .blog-single-pagination {
 	margin: 12px 0 10px;
@@ -2485,7 +2485,7 @@ ul.icon-direction li {
 	color           : #ffffff;
 }
 
-/* Footer 
+/* Footer
 ---------------------------------------------------------------*/
 #footer {
 	background-color: #152847;
@@ -4180,7 +4180,7 @@ ul.list-hours li .opening-hours {
 	color: var(--primary-color);
 }
 
-/* fl-row 
+/* fl-row
 ----------------------------------------------*/
 .fl-row .flat-read-more {
 	padding-top: 21px;

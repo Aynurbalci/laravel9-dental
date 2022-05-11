@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Treatment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,6 +11,10 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
 
+
+    public static function maincategorylist(){
+return Category::where('parent_id','=',11)->with('children')->get();
+    }
     /**
      * Handle an authentication attempt.
      *
@@ -38,7 +43,18 @@ class HomeController extends Controller
 
         ]);
     }
+    public function categorytreatments($id,$slug)
+    {
+        echo "asf";
+        exit();
+        $data=Treatment::find($id);
+        $images=DB::table('images')->where('treatment_id',$id)->get();
+              return view('home.treatment',[
+            'data' => $data,
+            'images'=>$images
 
+        ]);
+    }
     public function test($id, $name)
     {
         $data['id'] = $id;

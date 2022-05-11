@@ -30,17 +30,20 @@ Route::get('test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id
 
 Route::get('/', [HomeController::class, 'Index'])->name('home');
 
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 //Admin
 Route::prefix('admin')->name('admin.')->group(function () {
-
-
-
-    //category
     Route::get('/', [AdminPanelHomeController::class, 'index'])->name('index');
+
+ // admin general
+
+
+ Route::get('/setting', [AdminPanelHomeController::class, 'setting'])->name('setting');
+
+
+    // admin category
 
     Route::prefix('/category')->name('category.')->controller(AdminPanelCategoryController::class)->group(function () {
         Route::get('/', 'index')->name('index');
@@ -75,3 +78,4 @@ Route::get('admin/login', [HomeController::class, 'login'])->name('admin_login')
 Route::post('/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
 Route::get('/logout', [HomeController::class, 'logout'])->name('admin_logout');
 Route::get('/treatment/{id}',[HomeController::class,'treatment'])->name('treatment');
+Route::get('/categorytreatments/{id}/{slug}',[HomeController::class, 'categorytreatments'])->name('categorytreatments');

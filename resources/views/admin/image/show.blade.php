@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.adminbase')
 
 @section('title', 'Show Category :'.$data->title)
 

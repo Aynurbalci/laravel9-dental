@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><?php echo $__env->yieldContent('title'); ?></title>
     <!-- plugins:css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"/>
     <link rel="stylesheet" href="<?php echo e(asset('assests')); ?>/admin/vendors/feather/feather.css">
     <link rel="stylesheet" href="<?php echo e(asset('assests')); ?>/admin/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="<?php echo e(asset('assests')); ?>/admin/vendors/ti-icons/css/themify-icons.css">
@@ -22,9 +24,8 @@
     <link rel="stylesheet" href="<?php echo e(asset('assests')); ?>/admin/css/vertical-layout-light/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="<?php echo e(asset('assests')); ?>/admin/images/favicon.png" />
-
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 
     <?php echo $__env->yieldContent('head'); ?>
 </head>
@@ -32,7 +33,7 @@
 <body>
     <div class="container-scroller">
 
-        <?php echo $__env->make('admin._header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->make('admin.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div class="container-fluid page-body-wrapper">
 
             <?php echo $__env->make('admin._sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -45,7 +46,6 @@
         </div>
     </div>
     <?php echo $__env->yieldContent('foot'); ?>
-    <!-- plugins:js -->
     <script src="<?php echo e(asset('assests')); ?>/admin/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
@@ -65,8 +65,9 @@
     <script src="<?php echo e(asset('assests')); ?>/admin/js/jquery.cookie.js" type="text/javascript"></script>
     <script src="<?php echo e(asset('assests')); ?>/admin/js/dashboard.js"></script>
     <script src="<?php echo e(asset('assests')); ?>/admin/js/Chart.roundedBarCharts.js"></script>
-    <!-- End custom js for this page-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
 
 </html>
