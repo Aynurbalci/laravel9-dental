@@ -11,8 +11,8 @@ class HomeController extends Controller
 
        return view('admin.index');
    }
-   public function setting(){
+    public function setting(){
 
-    return view('admin.setting');
-}
+        return view('admin.setting');
+    }
 }
