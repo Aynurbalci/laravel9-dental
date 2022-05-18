@@ -1,4 +1,8 @@
 <?php $__env->startSection('title', 'Edit Treatment :' . $data->title); ?>
+<?php $__env->startSection('head'); ?>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"></script>
+
+<?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
     <div class="dashboard-wrapper">
@@ -76,6 +80,15 @@
                 </div>
             </div>
         </div>
+    <?php $__env->stopSection(); ?>
+<?php $__env->startSection('foot'); ?>
+            <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+            <script>
+                $(function(){
+                    $('.textarea').summernote()
+                })
+            </script>
+
     <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/MAMP/htdocs/laravel9-dental/resources/views/admin/treatment/edit.blade.php ENDPATH**/ ?>
