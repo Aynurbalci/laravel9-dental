@@ -20,7 +20,7 @@
                                     <?php if(count($rs->children)): ?>
                                         <li><a href="#"><?php echo e($rs->title); ?></a>
                                             <ul class="children">
-                                                <?php echo $__env->make('home.categorytree',['children'=>$rs->children], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                                <?php echo $__env->make('home.categorytree', ['children' => $rs->children], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                             </ul>
                                         </li>
                                     <?php else: ?>
@@ -29,30 +29,25 @@
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
                         </li>
-                        <li class="menu-item-has-children">
-                            <a href="about-us.html" title="">Categories</a>
-                            <ul class="sub-menu">
-                                <?php $__currentLoopData = $mainCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <?php if(count($rs->children)): ?>
-                                        <li><a href="#"><?php echo e($rs->title); ?></a>
-                                            <ul class="children">
-                                                <?php echo $__env->make('home.categorytree',['children'=>$rs->children], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                                            </ul>
-                                        </li>
-                                    <?php else: ?>
-                                        <li><a href="#"><?php echo e($rs->title); ?></a></li>
-                                    <?php endif; ?>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            </ul>
+                        <li>
+                            <a href="<?php echo e(route('home')); ?>" title="">Home</a>
                         </li>
-                        <li class="menu-item-has-children">
-                            <a href="services.html" title="">Services</a>
-                            <ul class="sub-menu">
-                                <li><a href="services.html" title="">Services</a></li>
-                                <li><a href="service-details.html" title="">Services Details</a></li>
-                            </ul>
+                        <li>
+                            <a href="<?php echo e(route('about')); ?>" title="">About Us</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo e(route('references')); ?>" title="">References</a>
+                        </li>
+                        <li >
+                            <a href="<?php echo e(route('references')); ?>" title="">Services</a>
+
+
 
                         </li>
+                        <li>
+                            <a href="<?php echo e(route('contact')); ?>" title="">Contact</a>
+                        </li>
+
                         <li class="menu-item-has-children">
                             <a href="blog-standard.html" title="">Blog</a>
                             <ul class="sub-menu">
@@ -61,12 +56,8 @@
                             </ul>
 
                         </li>
-                        <li>
-                            <a href="book-appointment.html" title="">Book Appointment</a>
-                        </li>
-                        <li>
-                            <a href="contact.html" title="">Contact</a>
-                        </li>
+
+
                     </ul>
 
                 </nav>

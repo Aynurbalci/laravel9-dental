@@ -16,43 +16,38 @@
                         <li class="menu-item-has-children">
                             <a href="about-us.html" title="">Categories</a>
                             <ul class="sub-menu">
-                                @foreach($mainCategories as $rs)
-                                    @if(count($rs->children))
-                                        <li><a href="#">{{$rs->title}}</a>
+                                @foreach ($mainCategories as $rs)
+                                    @if (count($rs->children))
+                                        <li><a href="#">{{ $rs->title }}</a>
                                             <ul class="children">
-                                                @include('home.categorytree',['children'=>$rs->children])
+                                                @include('home.categorytree', ['children' => $rs->children])
                                             </ul>
                                         </li>
                                     @else
-                                        <li><a href="#">{{$rs->title}}</a></li>
+                                        <li><a href="#">{{ $rs->title }}</a></li>
                                     @endif
                                 @endforeach
                             </ul>
                         </li>
-                        <li class="menu-item-has-children">
-                            <a href="about-us.html" title="">Categories</a>
-                            <ul class="sub-menu">
-                                @foreach($mainCategories as $rs)
-                                    @if(count($rs->children))
-                                        <li><a href="#">{{$rs->title}}</a>
-                                            <ul class="children">
-                                                @include('home.categorytree',['children'=>$rs->children])
-                                            </ul>
-                                        </li>
-                                    @else
-                                        <li><a href="#">{{$rs->title}}</a></li>
-                                    @endif
-                                @endforeach
-                            </ul>
+                        <li>
+                            <a href="{{ route('home') }}" title="">Home</a>
                         </li>
-                        <li class="menu-item-has-children">
-                            <a href="services.html" title="">Services</a>
-                            <ul class="sub-menu">
-                                <li><a href="services.html" title="">Services</a></li>
-                                <li><a href="service-details.html" title="">Services Details</a></li>
-                            </ul>
+                        <li>
+                            <a href="{{ route('about') }}" title="">About Us</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('references') }}" title="">References</a>
+                        </li>
+                        <li >
+                            <a href="{{ route('references') }}" title="">Services</a>
+
+
 
                         </li>
+                        <li>
+                            <a href="{{ route('contact') }}" title="">Contact</a>
+                        </li>
+
                         <li class="menu-item-has-children">
                             <a href="blog-standard.html" title="">Blog</a>
                             <ul class="sub-menu">
@@ -61,12 +56,8 @@
                             </ul>
 
                         </li>
-                        <li>
-                            <a href="book-appointment.html" title="">Book Appointment</a>
-                        </li>
-                        <li>
-                            <a href="contact.html" title="">Contact</a>
-                        </li>
+
+
                     </ul>
 
                 </nav>

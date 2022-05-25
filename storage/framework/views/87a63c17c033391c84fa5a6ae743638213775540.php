@@ -1,4 +1,11 @@
-<?php $__env->startSection('title', 'Laravel Dental Appointment Site'); ?>
+<?php $__env->startSection('title', $setting->title); ?>
+<?php $__env->startSection('description', $setting->description); ?>
+<?php $__env->startSection('keywords', $setting->keywords); ?>
+<?php $__env->startSection('icon', \Illuminate\Support\Facades\Storage::url($setting->icon)); ?>
+
+
+
+
 
 <?php $__env->startSection('slider'); ?>
     <?php echo $__env->make('home._slider', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

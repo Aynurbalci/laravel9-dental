@@ -34,7 +34,7 @@ return new class extends Migration
             $table->text('aboutus')->nullable();
             $table->text('contact')->nullable();
             $table->text('references')->nullable();
-            $table->text('icon',50)->nullable();
+            $table->text('icon',100)->nullable();
             $table->string('status',5)->nullable()->default('False');
             $table->timestamps();
         });

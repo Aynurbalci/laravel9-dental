@@ -201,6 +201,12 @@
             </a>
         </li>
         <li class="nav-item ">
+            <a class="nav-link" href="{{route('admin.message.index')}}">
+                <i class="menu-icon mdi mdi-help"></i>
+                <span class="menu-title">Messages</span>
+            </a>
+        </li>
+        <li class="nav-item ">
             <a class="nav-link" href="">
                 <i class="menu-icon mdi mdi-message-text-outline"></i>
                 <span class="menu-title">Comments</span>

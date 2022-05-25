@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>E Store - eCommerce HTML Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="eCommerce HTML Template Free Download" name="keywords">
-    <meta content="eCommerce HTML Template Free Download" name="description">
+    <title>@yield("title")</title>
+    <meta content="Description" name="@yield("description")">
+    <meta content="Keywords" name="@yield("keywords")">
+    <meta content="author" name="Aynur BALCI">
 <!-- Favicon -->
-<link href="{{asset('assests')  }}/img/favicon.ico" rel="icon">
+<link href="@yield("keywords")" rel="icon">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">

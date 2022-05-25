@@ -1,7 +1,10 @@
 @extends('layouts.admin')
 
 @section('title','Settings')
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 
+@endsection
 
 @section('content')
     <div class="content-wrapper">
@@ -40,7 +43,7 @@
                 </ul>
 
                 <!-- Tab panes -->
-                <form role="form" action="" method="post"
+                <form role="form" action="{{route('admin.setting.update')}}" method="post"
                       enctype="multipart/form-data">
                     @csrf
                     <div class="tab-content">
@@ -163,7 +166,7 @@
                             <div class="row mb-3">
                                 <label for="about" class="col-sm-2 col-form-label">About</label>
                                 <div class="col-sm-8">
-                                <textarea name="aboutus" id="abouttext" class="form-control">
+                                    <textarea name="aboutus" id="abouttext" class="form-control">
                                         {{$data->aboutus}}
                                 </textarea>
                                     <script>
@@ -176,6 +179,7 @@
                                                 console.error(error);
                                             });
                                     </script>
+
                                 </div>
                             </div>
                         </div>
@@ -230,10 +234,13 @@
 @endsection
 
 @section('foot')
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-    <script>
-        $(function () {
-            $('.textarea').summernote()
-        })
-    </script>
-@endsection
+            <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $('#aboutus').summernote();
+                    $('#contact').summernote();
+                    $('#references').summernote();
+                });
+            </script>
+
+    @endsection

@@ -1,5 +1,8 @@
 <?php $__env->startSection('title','Settings'); ?>
+<?php $__env->startSection('head'); ?>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 
+<?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
     <div class="content-wrapper">
@@ -38,7 +41,7 @@
                 </ul>
 
                 <!-- Tab panes -->
-                <form role="form" action="" method="post"
+                <form role="form" action="<?php echo e(route('admin.setting.update')); ?>" method="post"
                       enctype="multipart/form-data">
                     <?php echo csrf_field(); ?>
                     <div class="tab-content">
@@ -161,7 +164,7 @@
                             <div class="row mb-3">
                                 <label for="about" class="col-sm-2 col-form-label">About</label>
                                 <div class="col-sm-8">
-                                <textarea name="aboutus" id="abouttext" class="form-control">
+                                    <textarea name="aboutus" id="abouttext" class="form-control">
                                         <?php echo e($data->aboutus); ?>
 
                                 </textarea>
@@ -175,6 +178,7 @@
                                                 console.error(error);
                                             });
                                     </script>
+
                                 </div>
                             </div>
                         </div>
@@ -231,12 +235,15 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('foot'); ?>
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-    <script>
-        $(function () {
-            $('.textarea').summernote()
-        })
-    </script>
-<?php $__env->stopSection(); ?>
+            <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $('#aboutus').summernote();
+                    $('#contact').summernote();
+                    $('#references').summernote();
+                });
+            </script>
+
+    <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/MAMP/htdocs/laravel9-dental/resources/views/admin/setting.blade.php ENDPATH**/ ?>

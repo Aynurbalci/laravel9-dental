@@ -26,7 +26,7 @@ class HomeController extends Controller
 }
 public function settingUpdate(Request $request){
 
-    echo "Setting page update";
+    echo "Save Settings";
     $id = $request->input('id');
 
     $data = Setting::find($id);

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminPanel\HomeController as AdminPanelHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminPanelCategoryController;
+use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\AdminPanel\TreatmentController as AdminPanelTreatmentController;
 use App\Http\Controllers\AdminPanel\ImageController as AdminPanelImageController;
 use Illuminate\Support\Facades\Route;
@@ -27,8 +28,14 @@ use App\Http\Controllers\HomeController;
 Route::get('test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
 
 
-
+// HOME PAGE ROUTES
 Route::get('/', [HomeController::class, 'Index'])->name('home');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/references', [HomeController::class, 'references'])->name('references');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -41,7 +48,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
  Route::get('/setting', [AdminPanelHomeController::class, 'setting'])->name('setting');
-
+ Route::post('/setting', [AdminPanelHomeController::class, 'settingUpdate'])->name('setting.update');
 
     // admin category
 
@@ -64,12 +71,20 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/delete/{id}', 'destroy')->name('destroy');
         Route::get('/show/{id}', 'show')->name('show');
     });
-//     Admin images
+    // Admin treatment image galery routes
     Route::prefix('/image')->name('image.')->controller(AdminPanelImageController::class)->group(function () {
         Route::get('/{pid}', 'index')->name('index');
         Route::post('/store/{pid}', 'store')->name('store');
         Route::get('/destroy/{pid}/{id}', 'destroy')->name('destroy');
     });
+      // Admin message routes
+      Route::prefix('/message')->name('message.')->controller(MessageController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/show/{id}', 'show')->name('show');
+        Route::post('/update/{id}', 'update')->name('update');
+          Route::get('/destroy/{id}', 'destroy')->name('destroy');
+
+      });
 });
 //Admin logindmin_login');
 
