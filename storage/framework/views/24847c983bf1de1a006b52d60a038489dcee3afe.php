@@ -49,9 +49,9 @@
                         </li>
 
                         <li class="menu-item-has-children">
-                            <a href="blog-standard.html" title="">Blog</a>
+                            <a href="blog-standard.html" title="">Other</a>
                             <ul class="sub-menu">
-                                <li><a href="blog-standard.html" title="">Blog Standard</a></li>
+                                <li><a href="<?php echo e(route('faq')); ?>" title="">FAQ</a></li>
                                 <li><a href="blog-details.html" title="">Blog Details</a></li>
                             </ul>
 
