@@ -29,20 +29,23 @@
 
                                         <div class="form-group">
                                             <label for="inputText3" class="col-form-label">Answer</label>
-                                            <textarea name="answer" id="contacttext" class="form-control">
 
-                                </textarea>
-                                            <script>
-                                                ClassicEditor
-                                                    .create(document.querySelector('#answer'))
-                                                    .then(editor => {
-                                                        console.log(editor);
-                                                    })
-                                                    .catch(error => {
-                                                        console.error(error);
-                                                    });
-                                            </script>
+                                                <div class="col-sm-8">
+                                                    <textarea name="answer" id="contacttext" class="form-control">
 
+                                                    </textarea>
+                                                        <script>
+                                                            ClassicEditor
+                                                                .create(document.querySelector('#answer'))
+                                                                .then(editor => {
+                                                                    console.log(editor);
+                                                                })
+                                                                .catch(error => {
+                                                                    console.error(error);
+                                                                });
+                                                        </script>
+                                                    </div>
+                                                </div>
                                         </div>
 
                                         <div class="form-group">
@@ -66,14 +69,15 @@
         </div>
     @endsection
 
-        @section('foot')
-            <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-            <script>
-                $(document).ready(function(){
-                    $('#aboutus').summernote();
-                    $('#contact').summernote();
-                    $('#references').summernote();
-                });
-            </script>
+
+@section('foot')
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#aboutus').summernote();
+        $('#contact').summernote();
+        $('#references').summernote();
+    });
+</script>
 
 @endsection

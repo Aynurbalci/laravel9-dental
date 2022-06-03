@@ -2,6 +2,13 @@
 <?php $__env->startSection('description', $setting->description); ?>
 <?php $__env->startSection('keywords', $setting->keywords); ?>
 <?php $__env->startSection('icon', \Illuminate\Support\Facades\Storage::url($setting->icon)); ?>
+<?php $__env->startSection('head'); ?>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<?php $__env->stopSection(); ?>
+
 
 <?php $__env->startSection('content'); ?>
 
@@ -19,11 +26,23 @@
 
                     </div>
                     <div class="baner-tittle">
-
+<div id="accordion">
                        <?php $__currentLoopData = $datalist; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                       <div class="card">
+                        <div class="card-header">
+                          <a class="card-link" data-toggle="collapse" href="#collapse<?php echo e($loop->iteration); ?>">
                            <h3><?php echo e($rs->question); ?></h3>
-                           <p><?php echo $rs->answer; ?></p>
+                        </a>
+                    </div>
+
+                            <div id="collapse<?php echo e($loop->iteration); ?>" class="collapse <?php if (! $__env->hasRenderedOnce('9420d34b-ff07-40ef-b0d2-bb85fff834d1')): $__env->markAsRenderedOnce('9420d34b-ff07-40ef-b0d2-bb85fff834d1'); ?> show <?php endif; ?>" data-parent="#accordion">
+                                <div class="card-body">
+                           <?php echo $rs->answer; ?>
+
+                        </div>
+                            </div>
                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </div>
                     </div>
 
                 </div>

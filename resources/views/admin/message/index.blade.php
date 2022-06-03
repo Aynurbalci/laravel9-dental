@@ -7,11 +7,7 @@
     <div class="card">
         <h2 class="text-left">Message list</h2>
         <div class="card-body">
-            <button type="button" class="btn btn-outline-danger btn-icon-text">
-                <a href="" class="ti-upload btn-icon-prepend"
-                    style="text-decoration:none"> Add Message</a>
 
-            </button>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>

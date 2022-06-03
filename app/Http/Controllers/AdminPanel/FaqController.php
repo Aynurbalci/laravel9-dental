@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminPanel;
 use App\Http\Controllers\Controller;
 use App\Models\Faq;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FaqController extends Controller
 {
@@ -104,6 +105,11 @@ return view('admin.faq.index',[
      */
     public function destroy($id)
     {
-        //
+        $data = Faq::find($id);
+        if ($data->image && Storage::disk('public')->exists($data->image)) {
+           Storage::delete($data->image);
+        }
+        $data->delete();
+        return redirect('admin/faq');
     }
 }
