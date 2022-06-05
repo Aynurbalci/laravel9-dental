@@ -207,7 +207,7 @@
             </a>
         </li>
         <li class="nav-item ">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="<?php echo e(route('admin.comment.index')); ?>">
                 <i class="menu-icon mdi mdi-message-text-outline"></i>
                 <span class="menu-title">Comments</span>
             </a>

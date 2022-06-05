@@ -22,31 +22,30 @@
                                             <th>Id</th>
                                             <td>{{ $data->id }}</td>
                                         </tr>
-
+                                        <tr>
+                                            <th>Treatment</th>
+                                            <td>{{ $data->treatment->title }}</td>
+                                        </tr>
                                         <tr>
                                             <th>Name & Surname</th>
-                                            <td>{{ $data->name }}</td>
+                                            <td>{{ $data->user->name }}</td>
                                         </tr>
-                                        <tr>
-                                            <th>Phone Number</th>
-                                            <td>{{ $data->phone }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Email</th>
-                                            <td>{{ $data->email }}</td>
-                                        </tr>
+
                                         <tr>
                                             <th>Subject</th>
                                             <td>{{ $data->subject }}</td>
                                         </tr>
                                         <tr>
                                             <th>Message</th>
-                                            <td>{{ $data->message }}</td>
+                                            <td>{{ $data->review }}</td>
                                         </tr>
-
+                                        <tr>
+                                            <th>Rate</th>
+                                            <td>{{ $data->rate }}</td>
+                                        </tr>
                                         <tr>
                                             <th>Ip Number</th>
-                                            <td>{{ $data->ip }}</td>
+                                            <td>{{ $data->IP }}</td>
                                         </tr>
                                         <tr>
                                             <th>Status</th>
@@ -63,13 +62,15 @@
                                         <tr>
                                             <th>Admin Note :</th>
                                             <td>
-                                                <form action="{{ route('admin.message.update', ['id' => $data->id]) }}" method="post">
+                                                <form action="{{ route('admin.comment.update', ['id' => $data->id]) }}" method="post">
                                                    @csrf
-                                                    <textarea class="textarea"  cols="20"  id="note" name="note">
-                                                     {{$data->note}}
-                                                </textarea>
+                                                  <select name="status">
+                                                      <option selected>{{ $data->status }}</option>
+                                                      <option >True</option>
+                                                      <option>False</option>
+                                                  </select>
                                                     <div class="card-footer">
-                                                        <button type="submit" class="btn btn-primary">Update Note</button>
+                                                        <button type="submit" class="btn btn-primary">Update Comment</button>
                                                     </div>
                                                 </form>
                                             </td>

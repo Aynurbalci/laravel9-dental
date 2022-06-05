@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 
+use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Message;
 use App\Models\Setting;
@@ -92,18 +93,32 @@ $datalist=Faq::all();
         $data->message = $request->input('message');
         $data->ip = request()->ip();
         $data->save();
-        return redirect()->route('contact')->with('info', 'your message has been sent, Thank you.');
+        return redirect()->route('contact')->with('success', 'your message has been sent, Thank you.');
     }
-
+    public function storecomment(Request $request)
+    {
+       //dd($request); //check your values
+        $data = new Comment();
+        $data->user_id = Auth::id(); //login user
+        $data->treatment_id = $request->input('treatment_id');
+        $data->subject = $request->input('subject');
+        $data->review = $request->input('review');
+        $data->rate = $request->input('rate');
+        $data->ip = request()->ip();
+        $data->save();
+        return redirect()->route('treatment',['id'=> $request->input('treatment_id')])->with('info', 'your commet has been sent, Thank you.');
+    }
 
 
     public function treatment($id)
     {
         $data = Treatment::find($id);
         $images = DB::table('images')->where('treatment_id', $id)->get();
+        $reviews=Comment::where('treatment_id',$id)->get();
         return view('home.treatment', [
             'data' => $data,
-            'images' => $images
+            'images' => $images,
+            'reviews' => $reviews
 
         ]);
     }
@@ -118,6 +133,10 @@ $datalist=Faq::all();
             'images' => $images
 
         ]);
+    }
+    public function loginuser()
+    {
+        return view('home.login');
     }
     public function test($id, $name)
     {

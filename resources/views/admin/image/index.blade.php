@@ -43,9 +43,7 @@
                                 Image
                             </th>
 
-                            <th style="width:30px">
-                                Update
-                            </th>
+
                             <th>
                                 Delete
                             </th>

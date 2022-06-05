@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminPanelHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminPanelCategoryController;
 use App\Http\Controllers\AdminPanel\FaqController;
@@ -36,7 +37,10 @@ Route::get('/references', [HomeController::class, 'references'])->name('referenc
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
+Route::post('/storecomment', [HomeController::class, 'storecomment'])->name('storecomment');
 
+
+Route::view('/loginuser','home.login')->name('loginuser');
 
 
 
@@ -97,6 +101,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/update/{id}', 'update')->name('update');
         Route::get('/delete/{id}', 'destroy')->name('destroy');
         Route::get('/show/{id}', 'show')->name('show');
+    });
+//admin comment routes
+    Route::prefix('/comment')->name('comment.')->controller(CommentController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/show/{id}', 'show')->name('show');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+
     });
 });
 //Admin logindmin_login');

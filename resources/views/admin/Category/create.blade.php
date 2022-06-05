@@ -31,11 +31,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="inputText3" class="col-form-label">Keywords</label>
-                                        <input id="inputText3" type="text" class="form-control" name="keywords" placeholder="Keywords"> >
+                                        <input id="inputText3" type="text" class="form-control" name="keywords" placeholder="Keywords">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputText3" class="col-form-label">Description</label>
-                                        <input id="inputText3" type="text" class="form-control" name="description" placeholder="Description">>
+                                        <input id="inputText3" type="text" class="form-control" name="description" placeholder="Description">
                                     </div>
 
                                     <div class="form-group">
