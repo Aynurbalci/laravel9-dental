@@ -1,20 +1,21 @@
 @extends('layouts.home')
-
-
-
-
+@section('title','User Login |')
 
 
 @section('content')
-    <section class="page_header d-flex align-items-center">
-        <div class="container">
-            <div class="section_heading text-center mb-40 wow fadeInUp" data-wow-delay="300ms">
-                <h3>Trendy Salon &amp; Spa</h3>
-                <h2>Login page</h2>
-                <div class="heading-line"></div>
-            </div>
+<div class="container">
+    <div class="text-banner wow fadeInDown">
+        <div class="baner-tittle">
+            <a href="{{ route('home') }}" class="font-raguler">Home </a><a href="{{ route('loginuser') }}"> |
+                User Login</a>
         </div>
-    </section><!--/. page_header -->
-    @include('auth.login')
+        <div class="baner-tittle">
+            @include('auth.login')
+        </div>
+
+    </div>
+</div>
+
+
 @endsection
 

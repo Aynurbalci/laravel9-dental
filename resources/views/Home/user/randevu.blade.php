@@ -1,63 +1,67 @@
-@extends('layouts.admin')
-@section('title', 'User Randevu')
-
+@extends('layouts.home')
+@section('title', 'User randevu')
 
 @section('content')
 
-    <div class="card">
-        <h2 class="text-left">User Randevu</h2>
-        <div class="card-body">
+    <a href="{{ route('home') }}" class="font-raguler">Home </a><a href="{{ route('contact') }}"> |
+        User randevu</a>
 
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Status</th>
-
-                        <th>Delete</th>
-                        <th>Show</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach ($data as $rs)
-                        <tr>
-                            <td>{{ $rs->id }}</td>
-
-                            <td>{{ $rs->name }}</td>
-
-                            <td>{{ $rs->email }}</td>
-                            <td>
-                                @foreach($rs->roles as $role)
-                                    {{$role->name}}
-
-                                @endforeach
-
-                            </td>
-                            <td>{{ $rs->status }}</td>
-
-
-
-                            <td><a class="btn btn-inverse-danger btn-fw"
-                                   href="{{ route('admin.user.destroy', ['id' => $rs->id]) }}"
-                                   onclick="return confirm('Deleting !! Are you sure ?')">Delete</a></td>
-                            <td><a  class="btn btn-inverse-success btn-fw"
-                                    href="{{ route('admin.user.show', ['id' => $rs->id]) }}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">Show</a></td>
-
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Remove</th>
+        </tr>
+        </thead>
+        @foreach($data as $rs)
+        <tbody class="align-middle">
+        <tr>
+            <td>
+                <div class="img">
+                    <a href="#"><img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="Image"></a>
+                    <p>{{$rs->product->title}}</p>
+                </div>
+            </td>
+            <td>{{$rs->product->price}}</td>
+            <td>
+                <div class="qty">
+                    <button class="btn-minus"><i class="fa fa-minus"></i></button>
+                    <input type="text" value="1">
+                    <button class="btn-plus"><i class="fa fa-plus"></i></button>
+                </div>
+            </td>
+            <td>{{$rs->product->price}}</td>
+            <td><button><i class="fa fa-trash"></i></button></td>
+        </tr>
+        @endforeach
 
 
 
+        </tbody>
+    </table>
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 @endsection
-@section('footer')
+
+

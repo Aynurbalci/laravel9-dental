@@ -19,7 +19,7 @@ class HomeController extends Controller
 
     public static function maincategorylist()
     {
-        return Category::where('parent_id', '=', 11)->with('children')->get();
+        return Category::where('parent_id', '=', 0)->with('children')->get();
     }
     /**
      * Handle an authentication attempt.
@@ -73,12 +73,12 @@ class HomeController extends Controller
     public function faq()
     {
 
-$setting = Setting::first();
-$datalist=Faq::all();
+        $setting = Setting::first();
+        $datalist = Faq::all();
 
         return view('home.faq', [
             'setting' => $setting,
-            'datalist'=>$datalist
+            'datalist' => $datalist
 
         ]);
     }
@@ -97,7 +97,7 @@ $datalist=Faq::all();
     }
     public function storecomment(Request $request)
     {
-       //dd($request); //check your values
+        //dd($request); //check your values
         $data = new Comment();
         $data->user_id = Auth::id(); //login user
         $data->treatment_id = $request->input('treatment_id');
@@ -106,7 +106,7 @@ $datalist=Faq::all();
         $data->rate = $request->input('rate');
         $data->ip = request()->ip();
         $data->save();
-        return redirect()->route('treatment',['id'=> $request->input('treatment_id')])->with('info', 'your commet has been sent, Thank you.');
+        return redirect()->route('treatment', ['id' => $request->input('treatment_id')])->with('info', 'your commet has been sent, Thank you.');
     }
 
 
@@ -114,7 +114,7 @@ $datalist=Faq::all();
     {
         $data = Treatment::find($id);
         $images = DB::table('images')->where('treatment_id', $id)->get();
-        $reviews=Comment::where('treatment_id',$id)->get();
+        $reviews = Comment::where('treatment_id', $id)->get();
         return view('home.treatment', [
             'data' => $data,
             'images' => $images,
@@ -124,13 +124,12 @@ $datalist=Faq::all();
     }
     public function categorytreatments($id, $slug)
     {
-        echo "aynur";
-        exit();
-        $data = Treatment::find($id);
-        $images = DB::table('images')->where('treatment_id', $id)->get();
-        return view('home.treatment', [
-            'data' => $data,
-            'images' => $images
+
+        $category = Category::find($id);
+        $treatments = DB::table('treatments')->where('category_id', $id)->get();
+        return view('home.categorytreatment', [
+            'category' => $category,
+            'treatments' => $treatments
 
         ]);
     }
@@ -148,29 +147,28 @@ $datalist=Faq::all();
     {
         return view('admin_login');
     }
-    public function logincheck(Request $request)
-    {
 
-
-        if ($request->isMethod('post')) {
-            $credentials = $request->only('email', 'password');
-            if (Auth::attempt($credentials)) {
-                $request->session()->regenerate();
-                return redirect()->intended(('admin'));
-            }
-            return back()->withErrors([
-
-                'email' => 'The provided credentials do not match our records.',
-            ]);
-        } else {
-            return view('admin_login');
-        }
-    }
     public function logout(Request $request)
     {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
+    }
+    public function loginadmincheck(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+
+        ]);
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/admin');
+        }
+        return back()->withErrors([
+            'error' => 'The provided credentials do not match our records.',
+
+        ])->onlyInput('email');
     }
 }

@@ -1,14 +1,21 @@
+<?php $__env->startSection('title','User Login |'); ?>
+
+
 <?php $__env->startSection('content'); ?>
-    <section class="page_header d-flex align-items-center">
-        <div class="container">
-            <div class="section_heading text-center mb-40 wow fadeInUp" data-wow-delay="300ms">
-                <h3>Trendy Salon &amp; Spa</h3>
-                <h2>Login page</h2>
-                <div class="heading-line"></div>
-            </div>
+<div class="container">
+    <div class="text-banner wow fadeInDown">
+        <div class="baner-tittle">
+            <a href="<?php echo e(route('home')); ?>" class="font-raguler">Home </a><a href="<?php echo e(route('loginuser')); ?>"> |
+                User Login</a>
         </div>
-    </section><!--/. page_header -->
-    <?php echo $__env->make('auth.login', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <div class="baner-tittle">
+            <?php echo $__env->make('auth.login', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        </div>
+
+    </div>
+</div>
+
+
 <?php $__env->stopSection(); ?>
 
 

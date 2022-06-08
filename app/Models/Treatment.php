@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Treatment extends Model
 {
     use HasFactory;
@@ -13,5 +14,8 @@ class Treatment extends Model
     }
     public function comment(){
         return $this->hasMany(Comment::class);
+    }
+    public function randevu(){
+        return $this->hasMany(Randevu::class);
     }
 }

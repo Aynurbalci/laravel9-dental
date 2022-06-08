@@ -196,13 +196,13 @@
         </li>
         <li class="nav-item ">
             <a class="nav-link" href="">
-                <i class="menu-icon mdi mdi-help"></i>
+                <i class="menu-icon mdi mdi-pencil-box-outline"></i>
                 <span class="menu-title">Documentation</span>
             </a>
         </li>
         <li class="nav-item ">
             <a class="nav-link" href="<?php echo e(route('admin.message.index')); ?>">
-                <i class="menu-icon mdi mdi-help"></i>
+                <i class="menu-icon mdi mdi-comment-plus-outline"></i>
                 <span class="menu-title">Messages</span>
             </a>
         </li>
@@ -213,7 +213,7 @@
             </a>
         </li>
         <li class="nav-item ">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="<?php echo e(route('admin.user.index')); ?>">
                 <i class="menu-icon mdi mdi-account-multiple"></i>
                 <span class="menu-title">Users</span>
             </a>

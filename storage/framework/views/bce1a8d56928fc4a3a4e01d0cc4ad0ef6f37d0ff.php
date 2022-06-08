@@ -54,6 +54,7 @@
             p{font-size: 12px;}
         }
 
+
     </style>
 <!-- Favicon -->
 <link href="<?php echo $__env->yieldContent("keywords"); ?>" rel="icon">
@@ -69,13 +70,14 @@
 
 <!-- Template Stylesheet -->
 <link href="<?php echo e(asset('assests')); ?>/css/style.css" rel="stylesheet">
+    <?php echo $__env->yieldContent('head'); ?>
 </head>
 
 <body>
 
 
 
-    <!-- NAVIGATION -->
+
 
     <?php echo $__env->yieldContent('content'); ?>
 

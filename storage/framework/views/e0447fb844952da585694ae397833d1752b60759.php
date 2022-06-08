@@ -1,16 +1,29 @@
-<?php $__env->startSection('title', '$data->title'); ?>
+<?php $__env->startSection('title', $data->title); ?>
+<?php $__env->startSection('description', $data->description); ?>
+<?php $__env->startSection('keywords', $data->keywords); ?>
+<?php $__env->startSection('icon', \Illuminate\Support\Facades\Storage::url($data->icon)); ?>
 
+<?php $__env->startSection('head'); ?>
+    <style>
+        i#star {
+            color: black;
+        }
 
+        i#active {
+            color: yellow;
+        }
+
+    </style>
+<?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
-
 
     <!-- Breadcrumb Start -->
     <div class="breadcrumb-wrap">
         <div class="container-fluid">
 
             <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="<?php echo e(route('home')); ?>">Home</a></li>
                 <li class="breadcrumb-item"><a href="#"><?php echo e($data->category->title); ?></a></li>
                 <li class="breadcrumb-item active"><?php echo e($data->title); ?></li>
             </ul>
@@ -31,7 +44,7 @@
 
                                     <?php $__currentLoopData = $images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <img src="<?php echo e(\Illuminate\Support\Facades\Storage::url($rs->image)); ?>"
-                                            alt="Product Image">
+                                             alt="Product Image">
 
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
@@ -41,7 +54,7 @@
                                     <?php $__currentLoopData = $images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <div class="slider-nav-img">
                                             <img src="<?php echo e(\Illuminate\Support\Facades\Storage::url($rs->image)); ?>"
-                                                alt="Product Image">
+                                                 alt="Product Image">
                                         </div>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </div>
@@ -52,18 +65,30 @@
                                     <div class="title">
                                         <h2><?php echo e($data->title); ?></h2>
                                     </div>
-                                    <div class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
+                                    <?php
+                                        $avg=$data->comment->average('rate');
+                                    ?>
+
+                                    <div class="reviews-submitted">
+                                        <div class="reviewer">
+
+                                        <div class="ratting">
+                                        <i id="<?php echo e($avg >= 1 ? 'active' : 'star'); ?>" class="fa fa-star"></i>
+                                        <i id="<?php echo e($avg >= 2 ? 'active' : 'star'); ?>" class="fa fa-star"></i>
+                                        <i id="<?php echo e($avg >= 3 ? 'active' : 'star'); ?>"  class="fa fa-star"></i>
+                                        <i id="<?php echo e($avg >= 4 ? 'active' : 'star'); ?>" class="fa fa-star"></i>
+                                        <i id="<?php echo e($avg >= 5 ? 'active' : 'star'); ?>" class="fa fa-star"></i>
                                     </div>
+                                    </div>
+                                </div>
+                                    <a href="#"><?php echo e(number_format($avg,1)); ?> / Review(<?php echo e($data->comment->count('id')); ?>
+
+                                        )</a>
                                     <div class="price">
 
                                         <p>$<?php echo e($data->price * 1.2); ?> <span>$<?php echo e($data->price * 5); ?></span></p>
                                     </div>
-
+<form method="post" action>
                                     <div class="quantity">
                                         <h4>Quantity:</h4>
                                         <div class="qty">
@@ -74,28 +99,12 @@
                                             <button class="btn-plus"><i class="fa fa-plus"></i></button>
                                         </div>
                                     </div>
-                                    <div class="p-size">
-                                        <h4>Size:</h4>
-                                        <div class="btn-group btn-group-sm">
-                                            <button type="button" class="btn">S</button>
-                                            <button type="button" class="btn">M</button>
-                                            <button type="button" class="btn">L</button>
-                                            <button type="button" class="btn">XL</button>
-                                        </div>
-                                    </div>
-                                    <div class="p-color">
-                                        <h4>Color:</h4>
-                                        <div class="btn-group btn-group-sm">
-                                            <button type="button" class="btn">White</button>
-                                            <button type="button" class="btn">Black</button>
-                                            <button type="button" class="btn">Blue</button>
-                                        </div>
-                                    </div>
+
                                     <div class="action">
-                                        <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Add to
-                                            Cart</a>
-                                        <a class="btn" href="#"><i class="fa fa-shopping-bag"></i>Buy Now</a>
+
+                                        <button class="btn" type="submit"><i class="fa fa-shopping-bag"></i>Add to treatments</button>
                                     </div>
+</form>
                                 </div>
                             </div>
                         </div>
@@ -111,7 +120,7 @@
                                     <a class="nav-link" data-toggle="pill" href="#specification">Details</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="pill" href="#reviews">Reviews</a>
+                                    <a class="nav-link" data-toggle="pill" href="#reviews">Reviews(<?php echo e($data->comment->count('id')); ?>) </a>
                                 </li>
                             </ul>
 
@@ -132,37 +141,38 @@
                                 </div>
                                 <div id="reviews" class="container tab-pane fade">
                                     <?php $__currentLoopData = $reviews; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <div class="reviews-submitted">
-                                        <div class="reviewer">
-                                            <?php echo e($rs->user->name); ?><span><?php echo e($rs->created_at); ?></span></div>
-                                        <div class="ratting">
-                                            <i class="fa fa-star <?php if($rs->rate < 1): ?> -o empty <?php endif; ?> "></i>
-                                            <i class="fa fa-star <?php if($rs->rate < 2): ?> -o empty <?php endif; ?> "></i>
-                                            <i class="fa fa-star <?php if($rs->rate < 3): ?> -o empty <?php endif; ?> "></i>
-                                            <i class="fa fa-star <?php if($rs->rate < 4): ?> -o empty <?php endif; ?> "></i>
-                                            <i class="fa fa-star <?php if($rs->rate < 5): ?> -o empty <?php endif; ?> "></i>
-                                        </div>
-                                        <strong><?php echo e($rs->subject); ?></strong>
-                                        <p>
-                                            <?php echo e($rs->review); ?>
+                                        <div class="reviews-submitted">
+                                            <div class="reviewer">
+                                                <?php echo e($rs->user->name); ?><span><?php echo e($rs->created_at); ?></span></div>
+                                            <div class="ratting">
+                                                <i id="<?php echo e($rs->rate >= 1 ? 'active' : 'star'); ?>" class="fa fa-star"></i>
+                                                <i id="<?php echo e($rs->rate >= 2 ? 'active' : 'star'); ?>" class="fa fa-star"></i>
+                                                <i id="<?php echo e($rs->rate >= 3 ? 'active' : 'star'); ?>" class="fa fa-star"></i>
+                                                <i id="<?php echo e($rs->rate >= 4 ? 'active' : 'star'); ?>" class="fa fa-star"></i>
+                                                <i id="<?php echo e($rs->rate >= 5 ? 'active' : 'star'); ?>" class="fa fa-star"></i>
+                                            </div>
+                                            <strong><?php echo e($rs->subject); ?></strong>
+                                            <p>
+                                                <?php echo e($rs->review); ?>
 
-                                        </p>
-                                    </div>
+                                            </p>
+                                        </div>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                                     <form action="<?php echo e(route('storecomment')); ?>" method="post">
                                         <?php echo csrf_field(); ?>
                                         <input class="input" type="hidden" name="treatment_id"
-                                            value="<?php echo e($data->id); ?>" />
+                                               value="<?php echo e($data->id); ?>"/>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <input type="text" class="form-control" name="subject"
-                                                    placeholder="Subject">
+                                                       placeholder="Subject">
                                             </div>
 
                                         </div>
                                         <div class="form-group">
-                                            <textarea type="text" class="form-control" name="review" placeholder="Your review"></textarea>
+                                            <textarea type="text" class="form-control" name="review"
+                                                      placeholder="Your review"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <textarea class="form-control" rows="5" placeholder="Message"></textarea>
@@ -180,9 +190,12 @@
                                             <input type="radio" name="rate" value="1" id="1"><label for="1">☆</label>
                                         </div>
                                         <?php if(auth()->guard()->check()): ?>
-                                            <div><button class="btn" type="submit">Send Message</button></div>
+                                            <div>
+                                                <button class="btn" type="submit">Send Message</button>
+                                            </div>
                                         <?php else: ?>
-                                            <a href="/login" class="primary-btn">For Submit Your Review, Please Login</a>
+                                            <a href="/login" class="primary-btn">For Submit Your Review, Please
+                                                Login</a>
                                         <?php endif; ?>
                                     </form>
                                 </div>

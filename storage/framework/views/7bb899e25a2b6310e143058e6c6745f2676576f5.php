@@ -35,7 +35,7 @@
                         </a>
                     </div>
 
-                            <div id="collapse<?php echo e($loop->iteration); ?>" class="collapse <?php if (! $__env->hasRenderedOnce('9420d34b-ff07-40ef-b0d2-bb85fff834d1')): $__env->markAsRenderedOnce('9420d34b-ff07-40ef-b0d2-bb85fff834d1'); ?> show <?php endif; ?>" data-parent="#accordion">
+                            <div id="collapse<?php echo e($loop->iteration); ?>" class="collapse <?php if (! $__env->hasRenderedOnce('aa2bfcfe-e9f8-42dc-b71b-a1a7a9b9eaa2')): $__env->markAsRenderedOnce('aa2bfcfe-e9f8-42dc-b71b-a1a7a9b9eaa2'); ?> show <?php endif; ?>" data-parent="#accordion">
                                 <div class="card-body">
                            <?php echo $rs->answer; ?>
 
@@ -47,7 +47,14 @@
 
                 </div>
             </div>
-
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
 
 <?php $__env->stopSection(); ?>
 

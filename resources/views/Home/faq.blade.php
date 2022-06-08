@@ -23,7 +23,7 @@
                     <div class="section-title">
                         <h1>Frequently Asked Questions</h1>
 
-  
+
 
                     </div>
                     <div class="baner-tittle">
@@ -47,7 +47,14 @@
 
                 </div>
             </div>
-
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
 
 @endsection
 

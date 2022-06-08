@@ -54,6 +54,7 @@
             p{font-size: 12px;}
         }
 
+
     </style>
 <!-- Favicon -->
 <link href="@yield("keywords")" rel="icon">
@@ -69,13 +70,14 @@
 
 <!-- Template Stylesheet -->
 <link href="{{asset('assests')  }}/css/style.css" rel="stylesheet">
+    @yield('head')
 </head>
 
 <body>
 
 
 
-    <!-- NAVIGATION -->
+
 
     @yield('content')
 

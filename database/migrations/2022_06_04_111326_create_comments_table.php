@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->integer("user_id");
             $table->integer("treatment_id");
+            $table->string('date',20);
+            $table->string('time',20);
             $table->string('IP',20)->nullable();
             $table->string('subject',100)->nullable();
             $table->string('review',)->nullable();
