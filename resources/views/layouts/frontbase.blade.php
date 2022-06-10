@@ -54,8 +54,15 @@
             p{font-size: 12px;}
         }
 
+        .input-group-append {
+            cursor: pointer;
+        }
+        label,input{
+            background:white;
+        }
 
     </style>
+
 <!-- Favicon -->
 <link href="@yield("keywords")" rel="icon">
 
@@ -85,4 +92,5 @@
 
 
 </body>
+
 </html>

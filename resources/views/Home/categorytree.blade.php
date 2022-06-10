@@ -10,3 +10,4 @@
         <li><a href="{{route('categorytreatments',['id'=>$subcategory->id, 'slug'=>$subcategory->title])}}">{{$subcategory->title}}</a></li>
         @endif
 @endforeach
+

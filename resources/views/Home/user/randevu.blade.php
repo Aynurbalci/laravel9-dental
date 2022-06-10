@@ -33,7 +33,7 @@
                     <button class="btn-plus"><i class="fa fa-plus"></i></button>
                 </div>
             </td>
-            <td>{{$rs->product->price}}</td>
+
             <td><button><i class="fa fa-trash"></i></button></td>
         </tr>
         @endforeach

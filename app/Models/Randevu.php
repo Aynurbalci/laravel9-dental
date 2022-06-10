@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Randevu extends Model
 {
     use HasFactory;
+    public function treatment(){
+        return $this->belongsTo(Treatment::class);
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

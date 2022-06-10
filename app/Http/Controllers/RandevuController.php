@@ -15,9 +15,9 @@ class RandevuController extends Controller
      */
     public function index()
     {
-        $data=Randevu::where('user_id',Auth::id())->get();
-        return view('home.user.randevu',[
-            'data'=>$data
+        $data = Randevu::where('user_id', Auth::id())->get();
+        return view('home.user.randevu', [
+            'data' => $data
         ]);
     }
 
@@ -39,23 +39,17 @@ class RandevuController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
         $id=$request->id;
-        $data=Randevu::where('treatment_id',$id)->where('user_id',Auth::id())->first();
-        if($data){
-
-        }
-        else{
-            $data=new Randevu();
-            $data->treatment_id=$request->input('id');
-            $data->user_id=Auth::id();
-
-
-
-
-        }
+        $data = new Randevu();
+        $data->user_id = Auth::id();
+        $data->treatment_id=$id;
+        $data->IP=request()->IP();
+        $data->dentist_id=$request->input('dentist_id');
+        $data->date=$request->input('date');
+        $data->time=$request->input('time');
         $data->save();
-        return redirect()->back()->with('info','Treatment added to Randevus');
-
+        return redirect()->back()->with('info', 'Treatment added to Randevus');
     }
 
     /**

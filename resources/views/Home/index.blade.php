@@ -285,7 +285,7 @@ Teeth Whitening
         <div class="row">
             <div class="owl-carousel owl-theme" data-desktop="3" data-tablet="2" data-mobile="1">
                 @foreach ($treatmentlist1 as  $rs)
-                <div class="item box-item-carousel wow fadeInUp" data-wow-delay="100ms"" >
+                <div class="item box-item-carousel wow fadeInUp" data-wow-delay="100ms" >
                     <img src="{{ \Illuminate\Support\Facades\Storage::url($rs->image) }}" alt="image" style="min-height:500px; min-weight:100px; max-height:500px; max-weight:100px;">
                     <div class="info">
                         <h2 class="name text-color-title-sidebar"><a href="{{route('treatment',['id' =>$rs->id])}}">{{$rs->title  }}</a></h2>

@@ -33,7 +33,7 @@
                                             </ul>
                                         </li>
                                     <?php else: ?>
-                                        <li><a href="#"><?php echo e($rs->title); ?></a></li>
+                                        <li><a href="<?php echo e(route('categorytreatments',['id'=>$rs->id, 'slug'=>$rs->title])); ?>"><?php echo e($rs->title); ?></a></li>
                                     <?php endif; ?>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>

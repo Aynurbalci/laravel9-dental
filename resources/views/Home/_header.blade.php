@@ -33,7 +33,7 @@
                                             </ul>
                                         </li>
                                     @else
-                                        <li><a href="#">{{ $rs->title }}</a></li>
+                                        <li><a href="{{route('categorytreatments',['id'=>$rs->id, 'slug'=>$rs->title])}}">{{ $rs->title }}</a></li>
                                     @endif
                                 @endforeach
                             </ul>

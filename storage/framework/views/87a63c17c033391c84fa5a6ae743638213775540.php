@@ -283,7 +283,7 @@ Teeth Whitening
         <div class="row">
             <div class="owl-carousel owl-theme" data-desktop="3" data-tablet="2" data-mobile="1">
                 <?php $__currentLoopData = $treatmentlist1; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="item box-item-carousel wow fadeInUp" data-wow-delay="100ms"" >
+                <div class="item box-item-carousel wow fadeInUp" data-wow-delay="100ms" >
                     <img src="<?php echo e(\Illuminate\Support\Facades\Storage::url($rs->image)); ?>" alt="image" style="min-height:500px; min-weight:100px; max-height:500px; max-weight:100px;">
                     <div class="info">
                         <h2 class="name text-color-title-sidebar"><a href="<?php echo e(route('treatment',['id' =>$rs->id])); ?>"><?php echo e($rs->title); ?></a></h2>

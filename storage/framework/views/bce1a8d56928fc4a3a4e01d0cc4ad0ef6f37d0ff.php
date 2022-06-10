@@ -54,8 +54,15 @@
             p{font-size: 12px;}
         }
 
+        .input-group-append {
+            cursor: pointer;
+        }
+        label,input{
+            background:white;
+        }
 
     </style>
+
 <!-- Favicon -->
 <link href="<?php echo $__env->yieldContent("keywords"); ?>" rel="icon">
 
@@ -85,5 +92,6 @@
 
 
 </body>
+
 </html>
 <?php /**PATH /Applications/MAMP/htdocs/laravel9-dental/resources/views/layouts/frontbase.blade.php ENDPATH**/ ?>

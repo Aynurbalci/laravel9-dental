@@ -9,6 +9,7 @@ use App\Models\Faq;
 use App\Models\Message;
 use App\Models\Setting;
 use App\Models\Treatment;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -101,6 +102,7 @@ class HomeController extends Controller
         $data = new Comment();
         $data->user_id = Auth::id(); //login user
         $data->treatment_id = $request->input('treatment_id');
+
         $data->subject = $request->input('subject');
         $data->review = $request->input('review');
         $data->rate = $request->input('rate');
@@ -112,26 +114,30 @@ class HomeController extends Controller
 
     public function treatment($id)
     {
+        $users=User::all();
         $data = Treatment::find($id);
         $images = DB::table('images')->where('treatment_id', $id)->get();
         $reviews = Comment::where('treatment_id', $id)->get();
+
         return view('home.treatment', [
             'data' => $data,
             'images' => $images,
-            'reviews' => $reviews
+            'reviews' => $reviews,
+            'users'=>$users
 
         ]);
     }
-    public function categorytreatments($id, $slug)
+    public function categorytreatments($id)
     {
 
         $category = Category::find($id);
         $treatments = DB::table('treatments')->where('category_id', $id)->get();
-        return view('home.categorytreatment', [
+        return view('home.categorytreatments', [
             'category' => $category,
             'treatments' => $treatments
 
         ]);
+
     }
     public function loginuser()
     {
