@@ -68,10 +68,11 @@
 
                                 <li><a href="blog-details.html" title="">     <?php if(auth()->guard()->check()): ?>
                                             <strong><?php echo e(Auth::user()->name); ?></strong>
-                                            <a href="<?php echo e(route('userpanel.index')); ?>">My Profile</a>
+                                            <a href="<?php echo e(route('userpanel.index')); ?>"><i class="bi bi-chat-left-quote"></i>My Profile</a>
+                                            <a href="<?php echo e(route('userpanel.processes')); ?>">My Process</a>
                                             <a href="<?php echo e(route('userpanel.reviews')); ?>">My Reviews</a>
                                             <a href="/logoutuser">Logout</a>
-                                            <a href="/logoutuser">Logout</a>
+
 
                                         <?php endif; ?>
 
@@ -89,15 +90,16 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo e(route('randevu.index')); ?>" title=""><i class="bi bi-bag-plus-fill">
+                            <a href="<?php echo e(route('randevu.index')); ?>"  class="notification"><i class="bi bi-bag-plus-fill">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
                                     </svg>
-
+                                    <span class="badge"><?php echo e(\App\Http\Controllers\RandevuController::countRandevu()); ?></span>
 
                                 </i>
                             </a>
                         </li>
+
                     </ul>
 
                 </nav>

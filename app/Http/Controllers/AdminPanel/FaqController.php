@@ -61,7 +61,10 @@ return view('admin.faq.index',[
      */
     public function show($id)
     {
-        //
+        $data = Faq::find($id);
+        return view('admin.faq.show', [
+            'data' => $data
+        ]);
     }
 
     /**

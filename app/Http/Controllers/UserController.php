@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Process;
+use App\Models\ProcessTreatment;
+use App\Models\Randevu;
+use App\Models\Treatment;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,10 +22,36 @@ class UserController extends Controller
     {
         return view('home.user.index');
     }
-    public function reviews(){
-        $comments=Comment::where('user_id','=',Auth::id())->get();
-        return view('home.user.comments',[
-            'comments'=>$comments,
+
+    public function reviews()
+    {
+        $comments = Comment::where('user_id', '=', Auth::id())->get();
+        return view('home.user.comments', [
+            'comments' => $comments,
+        ]);
+    }
+
+    public function processdetail($id)
+
+    {
+       //dd($request);
+        $randevu = Randevu::where('user_id', '=', Auth::id())->get();
+
+        $process = Process::find($id);
+
+        $processtreatment = ProcessTreatment::where('user_id', '=', Auth::id())->get();
+        return view('home.user.processdetail', [
+'randevu'=>$randevu,
+            'process' => $process,
+            'processtreatment' => $processtreatment
+        ]);
+    }
+
+    public function processes()
+    {
+        $data = Process::where('user_id', '=', Auth::id())->get();
+        return view('home.user.processes', [
+            'data' => $data,
         ]);
     }
 
@@ -37,7 +68,7 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -48,7 +79,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -59,7 +90,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -70,8 +101,8 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -82,15 +113,24 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function reviewdestroy($id)
     {
-        $data=Comment::find($id);
+        $data = Comment::find($id);
         $data->delete();
         return redirect(route('userpanel.reviews'));
 
 
     }
+    public function canceltreatment($id){
+        $data=ProcessTreatment::find($id);
+        $data->status='Canceled';
+        $data->save();
+        return redirect()->back();
+
+    }
+
+
 }

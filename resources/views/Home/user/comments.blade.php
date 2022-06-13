@@ -36,7 +36,7 @@
                         <tr>
                             <td>{{ $rs->id }}</td>
 
-                          
+
                             <td><a href="{{route('treatment',['id'=>$rs->treatment_id])}}">{{ $rs->treatment->title }}</a></td>
                             <td>{{ $rs->subject }}</td>
                             <td>{{ $rs->review }}</td>

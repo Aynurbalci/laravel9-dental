@@ -35,7 +35,7 @@
                         <tr>
                             <td><?php echo e($rs->id); ?></td>
 
-                          
+
                             <td><a href="<?php echo e(route('treatment',['id'=>$rs->treatment_id])); ?>"><?php echo e($rs->treatment->title); ?></a></td>
                             <td><?php echo e($rs->subject); ?></td>
                             <td><?php echo e($rs->review); ?></td>

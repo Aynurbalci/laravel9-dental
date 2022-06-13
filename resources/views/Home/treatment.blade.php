@@ -27,6 +27,7 @@
                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">{{ $data->category->title }}</a></li>
                 <li class="breadcrumb-item active">{{ $data->title }}</li>
+
             </ul>
         </div>
     </div>
@@ -36,6 +37,7 @@
     <div class="product-detail">
         <div class="container-fluid">
             <div class="row">
+
                 <div class="col-lg-12">
                     <div class="product-detail-top">
                         <div class="row align-items-center">
@@ -62,6 +64,14 @@
                             <div class="col-md-7">
                                 <div class="product-content">
                                     @include('home.messages')
+                                    <a href="{{ route('randevu.index') }}" title=""><i class="bi bi-bag-plus-fill"> Go to Appointments
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+                                        </svg>
+
+
+                                    </i>
+                                </a>
                                     <div class="title">
                                         <h2>{{ $data->title }}</h2>
                                     </div>
@@ -108,10 +118,10 @@
 
                                             <br>
 
-                                            <select class="nav-item dropdown" name="dentist_id">
+                                            <select class="nav-item dropdown" name="dentist_id" required>
 
                                                 <option class="nav-link dropdown-toggle" data-toggle="dropdown"
-                                                        aria-expanded="false" value="0">Choose Doctor
+                                                        aria-expanded="false" value="">Choose Doctor
                                                 </option>
                                                 @foreach($users as $us)
                                                     @foreach($us->roles as $role)

@@ -12,7 +12,7 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
                             <div class="card-body">
-                                <h4 class="card-title">Detail Message Data</h4>
+                                <h4 class="card-title">Process Detail</h4>
 
                                 <div class="table-responsive pt-3">
 
@@ -23,25 +23,25 @@
                                             <td>{{ $data->id }}</td>
                                         </tr>
                                         <tr>
-                                            <th>Treatment</th>
-                                            <td>{{ $data->treatment->title }}</td>
+                                            <th>User</th>
+                                            <td>{{ $data->user->name }}</td>
                                         </tr>
                                         <tr>
                                             <th>Name & Surname</th>
-                                            <td>{{ $data->user->name }}</td>
+                                            <td>{{ $data->name }}</td>
                                         </tr>
 
                                         <tr>
-                                            <th>Subject</th>
-                                            <td>{{ $data->subject }}</td>
+                                            <th>Phone</th>
+                                            <td>{{ $data->phone }}</td>
                                         </tr>
                                         <tr>
-                                            <th>Message</th>
-                                            <td>{{ $data->review }}</td>
+                                            <th>Email</th>
+                                            <td>{{ $data->email }}</td>
                                         </tr>
                                         <tr>
-                                            <th>Rate</th>
-                                            <td>{{ $data->rate }}</td>
+                                            <th>Address</th>
+                                            <td>{{ $data->adress }}</td>
                                         </tr>
                                         <tr>
                                             <th>Ip Number</th>
@@ -60,21 +60,78 @@
                                             <td>{{ $data->updated_at }}</td>
                                         </tr>
                                         <tr>
-                                            <th>Admin Note :</th>
+                                            <th>Admin Note :
+                                                <br>   <br>
+                                            Status:
+                                            </th>
                                             <td>
-                                                <form action="{{ route('admin.comment.update', ['id' => $data->id]) }}" method="post">
+                                                <form action="{{ route('admin.process.update', ['id' => $data->id]) }}" method="post">
                                                    @csrf
+                                                    <textarea name="note" cols="100" rows="5">
+{{$data->note}}
+
+                                                    </textarea>
+                                                    <br>
                                                   <select name="status">
-                                                      <option selected>{{ $data->status }}</option>
-                                                      <option >True</option>
-                                                      <option>False</option>
+                                                      <option selected>{{ $data->status}}</option>
+                                                      <option >Accepted</option>
+                                                      <option>Shipped</option>
+                                                      <option>Canceled</option>
+                                                      <option>Completed</option>
                                                   </select>
+
                                                     <div class="card-footer">
-                                                        <button type="submit" class="btn btn-primary">Update Comment</button>
+                                                        <button type="submit" class="btn btn-primary">Update</button>
                                                     </div>
                                                 </form>
                                             </td>
                                         </tr>
+                                    </table>
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Id</th>
+
+                                            <th>Title</th>
+                                            <th>Price</th>
+                                            <th>Amount</th>
+                                            <th>Image</th>
+
+                                            <th>Status</th>
+
+                                            <th>Cancel</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach ($datalist as $rs)
+                                            <tr>
+                                                <td>{{ $rs->id }}</td>
+
+                                                <td>{{ $rs->treatment->title }}</td>
+                                                <td>{{ $rs->price }}</td>
+                                                <td>{{ $rs->amount }}</td>
+                                                <td>
+                                                    @if ($rs->treatment->image)
+                                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($rs->treatment->image) }}" height="30"
+                                                             alt="">
+                                                    @endif
+
+                                                </td>
+
+                                                <td>{{ $rs->status }}</td>
+                                                <td><a class="btn btn-inverse-success btn-fw"
+                                                       href="{{ route('admin.process.accepttreatment', ['id' => $rs->id]) }}"
+                                                       onclick="return confirm('Accepting !! Are you sure ?')">Accept</a>
+                                                <br>
+                                                <a class="btn btn-inverse-danger btn-fw"
+                                                       href="{{ route('admin.process.canceltreatment', ['id' => $rs->id]) }}"
+                                                       onclick="return confirm('Cancelling !! Are you sure ?')">Cancel</a></td>
+
+
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>

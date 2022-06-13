@@ -3,8 +3,14 @@
     <div id="theme-settings" class="settings-panel">
         <i class="settings-close ti-close"></i>
         <p class="settings-heading">SIDEBAR SKINS</p>
-        <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border me-3"></div>Light</div>
-        <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border me-3"></div>Dark</div>
+        <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+            <div class="img-ss rounded-circle bg-light border me-3"></div>
+            Light
+        </div>
+        <div class="sidebar-bg-options" id="sidebar-dark-theme">
+            <div class="img-ss rounded-circle bg-dark border me-3"></div>
+            Dark
+        </div>
         <p class="settings-heading mt-2">HEADER SKINS</p>
         <div class="color-tiles mx-0 px-4">
             <div class="tiles success"></div>
@@ -20,14 +26,17 @@
     <i class="settings-close ti-close"></i>
     <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="todo-tab" data-bs-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+            <a class="nav-link active" id="todo-tab" data-bs-toggle="tab" href="#todo-section" role="tab"
+               aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="chats-tab" data-bs-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
+            <a class="nav-link" id="chats-tab" data-bs-toggle="tab" href="#chats-section" role="tab"
+               aria-controls="chats-section">CHATS</a>
         </li>
     </ul>
     <div class="tab-content" id="setting-content">
-        <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
+        <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel"
+             aria-labelledby="todo-section">
             <div class="add-items d-flex px-3 mb-0">
                 <form class="form w-100">
                     <div class="form-group d-flex">
@@ -107,11 +116,13 @@
         <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
             <div class="d-flex align-items-center justify-content-between border-bottom">
                 <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
-                <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 fw-normal">See All</small>
+                <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 fw-normal">See
+                    All</small>
             </div>
             <ul class="chat-list">
                 <li class="list active">
-                    <div class="profile"><img src="<?php echo e(asset('assets')); ?>/images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+                    <div class="profile"><img src="<?php echo e(asset('assets')); ?>/images/faces/face1.jpg" alt="image"><span
+                            class="online"></span></div>
                     <div class="info">
                         <p>Thomas Douglas</p>
                         <p>Available</p>
@@ -119,7 +130,8 @@
                     <small class="text-muted my-auto">19 min</small>
                 </li>
                 <li class="list">
-                    <div class="profile"><img src="<?php echo e(asset('assets')); ?>/images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+                    <div class="profile"><img src="<?php echo e(asset('assets')); ?>/images/faces/face2.jpg" alt="image"><span
+                            class="offline"></span></div>
                     <div class="info">
                         <div class="wrapper d-flex">
                             <p>Catherine</p>
@@ -130,7 +142,8 @@
                     <small class="text-muted my-auto">23 min</small>
                 </li>
                 <li class="list">
-                    <div class="profile"><img src="<?php echo e(asset('assets')); ?>/images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+                    <div class="profile"><img src="<?php echo e(asset('assets')); ?>/images/faces/face3.jpg" alt="image"><span
+                            class="online"></span></div>
                     <div class="info">
                         <p>Daniel Russell</p>
                         <p>Available</p>
@@ -138,7 +151,8 @@
                     <small class="text-muted my-auto">14 min</small>
                 </li>
                 <li class="list">
-                    <div class="profile"><img src="<?php echo e(asset('assets')); ?>/images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
+                    <div class="profile"><img src="<?php echo e(asset('assets')); ?>/images/faces/face4.jpg" alt="image"><span
+                            class="offline"></span></div>
                     <div class="info">
                         <p>James Richardson</p>
                         <p>Away</p>
@@ -146,7 +160,8 @@
                     <small class="text-muted my-auto">2 min</small>
                 </li>
                 <li class="list">
-                    <div class="profile"><img src="<?php echo e(asset('assets')); ?>/images/faces/face5.jpg" alt="image"><span class="online"></span></div>
+                    <div class="profile"><img src="<?php echo e(asset('assets')); ?>/images/faces/face5.jpg" alt="image"><span
+                            class="online"></span></div>
                     <div class="info">
                         <p>Madeline Kennedy</p>
                         <p>Available</p>
@@ -154,7 +169,8 @@
                     <small class="text-muted my-auto">5 min</small>
                 </li>
                 <li class="list">
-                    <div class="profile"><img src="<?php echo e(asset('assets')); ?>/images/faces/face6.jpg" alt="image"><span class="online"></span></div>
+                    <div class="profile"><img src="<?php echo e(asset('assets')); ?>/images/faces/face6.jpg" alt="image"><span
+                            class="online"></span></div>
                     <div class="info">
                         <p>Sarah Graves</p>
                         <p>Available</p>
@@ -170,7 +186,7 @@
 
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
-        <li class="nav-item" >
+        <li class="nav-item">
             <a class="nav-link <?php echo e(request()->routeIs('admin.index') ? 'active' : ''); ?>" href="<?php echo e(route('admin.index')); ?>">
                 <i class="menu-icon mdi mdi-home"></i>
                 <span class="menu-title">Home</span>
@@ -194,18 +210,50 @@
                 <span class="menu-title">FAQ</span>
             </a>
         </li>
+
         <li class="nav-item ">
-            <a class="nav-link" href="">
+            <details class="nav-link">
+                <summary>
+                    <i class="fas fa-fw fa-chart-pie"></i>
+                    <span class="menu-title">Processes</span>
+                    <i class="menu-icon-arrow"></i>
+                </summary>
+        <li class="nav-item ">
+            <a class="nav-link" href="<?php echo e(@route('admin.process.index',['slug'=>'New'])); ?>">
                 <i class="menu-icon mdi mdi-pencil-box-outline"></i>
-                <span class="menu-title">Documentation</span>
+                <span class="menu-title">New Process</span>
             </a>
         </li>
         <li class="nav-item ">
-            <a class="nav-link" href="<?php echo e(route('admin.message.index')); ?>">
-                <i class="menu-icon mdi mdi-comment-plus-outline"></i>
-                <span class="menu-title">Messages</span>
+            <a class="nav-link" href="<?php echo e(@route('admin.process.index',['slug'=>'Accepted'])); ?>">
+                <i class="menu-icon mdi mdi-pencil-box-outline"></i>
+                <span class="menu-title">Accepted Process</span>
             </a>
         </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="<?php echo e(@route('admin.process.index',['slug'=>'Shipped'])); ?>">
+                <i class="menu-icon mdi mdi-pencil-box-outline"></i>
+                <span class="menu-title">Shipped Process</span>
+            </a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="<?php echo e(@route('admin.process.index',['slug'=>'Canceled'])); ?>">
+                <i class="menu-icon mdi mdi-pencil-box-outline"></i>
+                <span class="menu-title">Canceled Process</span>
+            </a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="<?php echo e(@route('admin.process.index',['slug'=>'Completed'])); ?>">
+                <i class="menu-icon mdi mdi-pencil-box-outline"></i>
+                <span class="menu-title">Completed Process</span>
+            </a>
+        </li>
+        </details>
+        </li>
+
+
+
+
         <li class="nav-item ">
             <a class="nav-link" href="<?php echo e(route('admin.comment.index')); ?>">
                 <i class="menu-icon mdi mdi-message-text-outline"></i>

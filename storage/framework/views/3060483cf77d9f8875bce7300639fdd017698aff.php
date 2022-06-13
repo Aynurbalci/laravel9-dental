@@ -1,6 +1,5 @@
 <?php $__env->startSection('title', $category->title . ' Treatments'); ?>
 
-
 <?php $__env->startSection('content'); ?>
     <div class="row">
         <?php $__currentLoopData = $treatments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

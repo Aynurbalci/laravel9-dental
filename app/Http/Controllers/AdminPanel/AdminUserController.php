@@ -101,4 +101,18 @@ class AdminUserController extends Controller
         $user->roles()->detach($rid);#many to many relation delete related data
         return redirect(route('admin.user.show',['id'=>$uid]));
     }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(User $user, $id)
+    {
+        $data = User::find($id);
+
+        $data->delete();
+        return redirect('admin/user');
+    }
+
 }

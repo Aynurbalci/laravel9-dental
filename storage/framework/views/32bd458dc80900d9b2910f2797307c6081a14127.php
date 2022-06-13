@@ -73,16 +73,10 @@
                                             Keep me signed in
                                         </label>
                                     </div>
-                                    <a href="#" class="auth-link text-black">Forgot password?</a>
+
                                 </div>
-                                <div class="mb-2">
-                                    <button class="btn btn-block btn-facebook auth-form-btn">
-                                        <i class="ti-facebook me-2"></i>Connect using facebook
-                                    </button>
-                                </div>
-                                <div class="text-center mt-4 fw-light">
-                                    Don't have an account? <a href="register.html" class="text-primary">Create</a>
-                                </div>
+
+
                             </form>
                         </div>
                     </div>

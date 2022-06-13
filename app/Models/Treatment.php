@@ -21,4 +21,7 @@ class Treatment extends Model
     public function randevu(){
         return $this->hasMany(Randevu::class);
     }
+    public function processtreatment(){
+        return $this->hasMany(ProcessTreatment::class);
+    }
 }

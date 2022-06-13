@@ -1,11 +1,11 @@
 @extends('layouts.admin')
-@section('title', 'Comment & reviews List')
+@section('title', 'Process List')
 
 
 @section('content')
 
     <div class="card">
-        <h2 class="text-left">Comment list</h2>
+        <h2 class="text-left">Process list</h2>
         <div class="card-body">
 
             <div class="table-responsive">
@@ -13,12 +13,14 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Name</th>
-                            <th>Treatment</th>
-                            <th>Subject</th>
-                            <th>Reviews</th>
-                            <th>Rate</th>
+                            <th>User</th>
+                            <th>Name & Surname</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Amount</th>
                             <th>Status</th>
+                            <th>Admin Note</th>
 
                             <th>Delete</th>
                             <th>Show</th>
@@ -30,19 +32,23 @@
                             <tr>
                                 <td>{{ $rs->id }}</td>
 
-                                <td>{{ $rs->user->name }}</td>
-                                <td><a href="{{route('admin.treatment.show',['id'=>$rs->treatment_id])}}">{{ $rs->treatment->title }}</a></td>
-                                <td>{{ $rs->subject }}</td>
-                                <td>{{ $rs->review }}</td>
-                                <td>{{ $rs->rate }}</td>
 
+                                <td><a href="{{route('admin.user.show',['id'=>$rs->user_id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">{{ $rs->user->name }}</a></td>
+
+                                <td>{{ $rs->name }}</td>
+                                <td>{{ $rs->phone }}</td>
+
+                                <td>{{ $rs->email }}</td>
+                                <td>{{ $rs->adress }}</td>
+                                <td>{{ $rs->total }}</td>
                                 <td>{{ $rs->status }}</td>
+                                <td>{{ $rs->note }}</td>
 
                                 <td><a class="btn btn-inverse-danger btn-fw"
-                                        href="{{ route('admin.comment.destroy', ['id' => $rs->id]) }}"
-                                        onclick="return confirm('Deleting !! Are you sure ?')">Delete</a></td>
+                                        href="{{ route('admin.process.cancelprocess', ['id' => $rs->id]) }}"
+                                        onclick="return confirm('Cancelling !! Are you sure ?')">Cancel</a></td>
                                 <td><a  class="btn btn-inverse-success btn-fw"
-                                        href="{{ route('admin.comment.show', ['id' => $rs->id]) }}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">Show</a></td>
+                                        href="{{ route('admin.process.show', ['id' => $rs->id]) }}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">Show</a></td>
 
                             </tr>
                         @endforeach

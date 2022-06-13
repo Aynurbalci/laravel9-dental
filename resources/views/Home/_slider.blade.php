@@ -16,7 +16,7 @@
                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                     data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="700"
                     data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                    {{$rs->keywords  }}
+                    {!!$rs->keywords  !!}
                 </div>
                 <div class="tp-caption tp-resizeme slide-font-2 " data-x="['left','left','left','center']"
                     data-hoffset="['5','5','15','-15']" data-y="['middle','middle','middle','middle']"
@@ -27,7 +27,7 @@
                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                     data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1000"
                     data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                    {{$rs->title  }}
+                    {!!$rs->title  !!}
                 </div>
                 <div class="tp-caption tp-resizeme slide-font-2" data-x="['left','left','left','center']"
                     data-hoffset="['5','9','19','-15']" data-y="['middle','middle','middle','middle']"
@@ -38,7 +38,7 @@
                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                     data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1000"
                     data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                    {{$rs->description  }}
+                    {!!$rs->description  !!}
                 </div>
                 <div class="tp-caption" data-x="['left','left','left','center']" data-hoffset="['0','10','20','-15']"
                     data-y="['middle','middle','middle','middle']" data-voffset="['108','108','108','85']"

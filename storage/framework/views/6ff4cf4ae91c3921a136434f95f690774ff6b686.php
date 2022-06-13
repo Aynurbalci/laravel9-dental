@@ -1,15 +1,18 @@
 
 
 <br>
-  <a href="<?php echo e(route('userpanel.index')); ?>"><i class="fa fa-user-o"></i>My Profile</a>
+  <a href="<?php echo e(route('userpanel.index')); ?>">My Profile</a>
   <br>
-   <a href="<?php echo e(route('userpanel.reviews')); ?>"><i class="fa fa-user-o"></i>My Treatments</a>
+   <a href="<?php echo e(route('userpanel.processes')); ?>">My Processes</a>
   <br>
-<a href="#"><i class="fa fa-user-o"></i>My Reviews</a>
+<a href="<?php echo e(route('userpanel.reviews')); ?>">My Reviews</a>
+
+
   <br>
-  <a href="#"><i class="fa fa-user-o"></i>Checkout</a>
+<a href="/logoutuser">Logout</a>
+
   <br>
-   <a href="#"><i class="fa fa-user-o"></i>My Treatments</a>
+
 
 
 

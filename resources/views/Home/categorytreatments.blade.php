@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 @section('title', $category->title . ' Treatments')
-1dk
+
 @section('content')
     <div class="row">
         @foreach ($treatments as $rs)

@@ -35,12 +35,11 @@
                                         <tr>
                                             <th>Roles</th>
                                             <td> @foreach($data->roles as $role)
-                                                    {{$role->name}}
+                                                    {{$role->name}}<a href="{{route('admin.user.destroyrole',['uid'=>$data->id,'rid'=>$role->id])}}"
+                                                                      onclick="return confirm('Deleting !! Are you sure ?')"
+                                                                      data-toggle="tooltip" title="Delete" style="size: 5px">[ x ]</a>
 
                                                 @endforeach</td>
-                                           <a  class="btn btn-inverse-success btn-fw"
-                                            href="{{ route('admin.user.destroyrole', ['uid' => $data->id,'rid' => $role->id]) }}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">[x]</a></td>
-
                                         </tr>
 
                                         <tr>

@@ -25,7 +25,10 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="<?php echo e(asset('assests')); ?>/admin/images/favicon.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<style>
 
+
+</style>
 
     <?php echo $__env->yieldContent('head'); ?>
 </head>
@@ -72,6 +75,43 @@
     <script src="<?php echo e(asset('assests')); ?>/admin/asset/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="<?php echo e(asset('assests')); ?>/admin/asset/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
     <script src="<?php echo e(asset('assests')); ?>/admin/asset/assets/libs/js/main-js.js"></script>
+    <script>
+        (function() {
+            var ws = new WebSocket('ws://' + window.location.host +
+                '/jb-server-page?reloadMode=RELOAD_ON_SAVE&'+
+                'referrer=' + encodeURIComponent(window.location.pathname));
+            ws.onmessage = function (msg) {
+                if (msg.data === 'reload') {
+                    window.location.reload();
+                }
+                if (msg.data.startsWith('update-css ')) {
+                    var messageId = msg.data.substring(11);
+                    var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length; i++) {
+                        var link = links[i];
+                        if (link.rel !== 'stylesheet') continue;
+                        var clonedLink = link.cloneNode(true);
+                        var newHref = link.href.replace(/(&|\?)jbUpdateLinksId=\d+/, "$1jbUpdateLinksId=" + messageId);
+                        if (newHref !== link.href) {
+                            clonedLink.href = newHref;
+                        }
+                        else {
+                            var indexOfQuest = newHref.indexOf('?');
+                            if (indexOfQuest >= 0) {
+                                // to support ?foo#hash
+                                clonedLink.href = newHref.substring(0, indexOfQuest + 1) + 'jbUpdateLinksId=' + messageId + '&' +
+                                    newHref.substring(indexOfQuest + 1);
+                            }
+                            else {
+                                clonedLink.href += '?' + 'jbUpdateLinksId=' + messageId;
+                            }
+                        }
+                        link.replaceWith(clonedLink);
+                    }
+                }
+            };
+        })();
+    </script>
 </body>
 
 </html>

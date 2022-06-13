@@ -16,7 +16,7 @@
                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                     data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="700"
                     data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                    <?php echo e($rs->keywords); ?>
+                    <?php echo $rs->keywords; ?>
 
                 </div>
                 <div class="tp-caption tp-resizeme slide-font-2 " data-x="['left','left','left','center']"
@@ -28,7 +28,7 @@
                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                     data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1000"
                     data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                    <?php echo e($rs->title); ?>
+                    <?php echo $rs->title; ?>
 
                 </div>
                 <div class="tp-caption tp-resizeme slide-font-2" data-x="['left','left','left','center']"
@@ -40,7 +40,7 @@
                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                     data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1000"
                     data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                    <?php echo e($rs->description); ?>
+                    <?php echo $rs->description; ?>
 
                 </div>
                 <div class="tp-caption" data-x="['left','left','left','center']" data-hoffset="['0','10','20','-15']"

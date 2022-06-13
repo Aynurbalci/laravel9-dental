@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Message;
+use App\Models\Role;
 use App\Models\Setting;
 use App\Models\Treatment;
 use App\Models\User;
@@ -114,6 +115,7 @@ class HomeController extends Controller
 
     public function treatment($id)
     {
+
         $users=User::all();
         $data = Treatment::find($id);
         $images = DB::table('images')->where('treatment_id', $id)->get();
@@ -124,6 +126,7 @@ class HomeController extends Controller
             'images' => $images,
             'reviews' => $reviews,
             'users'=>$users
+
 
         ]);
     }

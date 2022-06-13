@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CommentController extends Controller
 {
@@ -93,6 +94,9 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Comment::find($id);
+
+        $data->delete();
+        return redirect('admin/comment');
     }
 }
